@@ -7,6 +7,7 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using dissertationProj.Models;
+using System.Data.Entity;
 
 namespace dissertationProj.Models
 {
@@ -23,12 +24,17 @@ namespace dissertationProj.Models
 
         public Task<ClaimsIdentity> GenerateUserIdentityAsync(ApplicationUserManager manager)
         {
+
+            
+
             return Task.FromResult(GenerateUserIdentity(manager));
         }
     }
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
+        public DbSet<Patient> Patients { get; set; }
+
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
@@ -36,6 +42,10 @@ namespace dissertationProj.Models
 
         public static ApplicationDbContext Create()
         {
+            
+
+            
+
             return new ApplicationDbContext();
         }
     }
