@@ -373,6 +373,10 @@
     <Compile Include="Migrations\201903041423222_InitialMigration.Designer.cs">
       <DependentUpon>201903041423222_InitialMigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201903050013440_TTT.cs" />
+    <Compile Include="Migrations\201903050013440_TTT.Designer.cs">
+      <DependentUpon>201903050013440_TTT.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Patient.cs" />
@@ -434,6 +438,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201903041423222_InitialMigration.resx">
       <DependentUpon>201903041423222_InitialMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903050013440_TTT.resx">
+      <DependentUpon>201903050013440_TTT.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

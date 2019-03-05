@@ -33,15 +33,8 @@ namespace dissertationProj.Models
 
         //Parity is the amount of pregnancies had
         public int parity { get; set; }
-
-       /* public enum civilStatus
-        {
-            single = 0,
-            married = 1,
-            seperated = 2,
-            divorced = 3
-        } */
-
+        // single, married, seperated or divorced
+        public string civilStatus { get; set; }
         //  yes = 4 | no = 0
         public bool previousVTE { get; set; }
         // Provoked by major surgery?  yes = 3 | no = 0
@@ -75,8 +68,8 @@ namespace dissertationProj.Models
         //  yes = 1 | no = 0
         public bool grossVaricoseVeins { get; set; }
 
-        //  yes = 1 | no = 0
-        public bool obesity { get; set; }
+        //  0 = no, 1=>30 2=>40
+        public int obesity { get; set; }
 
 
         /*  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -155,6 +148,7 @@ namespace dissertationProj.Models
             return 0;
         }
 
+        
         
     }
 }
