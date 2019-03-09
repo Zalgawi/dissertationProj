@@ -10,7 +10,6 @@ namespace dissertationProj.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
-            ContextKey = "dissertationProj.Models.ApplicationDbContext";
         }
 
         protected override void Seed(dissertationProj.Models.ApplicationDbContext context)

@@ -365,17 +365,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201902231713357_InitialCreate.cs" />
-    <Compile Include="Migrations\201902231713357_InitialCreate.Designer.cs">
-      <DependentUpon>201902231713357_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201903041423222_InitialMigration.cs" />
-    <Compile Include="Migrations\201903041423222_InitialMigration.Designer.cs">
-      <DependentUpon>201903041423222_InitialMigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201903050013440_TTT.cs" />
-    <Compile Include="Migrations\201903050013440_TTT.Designer.cs">
-      <DependentUpon>201903050013440_TTT.cs</DependentUpon>
+    <Compile Include="Migrations\201903091546597_update.cs" />
+    <Compile Include="Migrations\201903091546597_update.Designer.cs">
+      <DependentUpon>201903091546597_update.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -433,14 +425,8 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201902231713357_InitialCreate.resx">
-      <DependentUpon>201902231713357_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201903041423222_InitialMigration.resx">
-      <DependentUpon>201903041423222_InitialMigration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201903050013440_TTT.resx">
-      <DependentUpon>201903050013440_TTT.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201903091546597_update.resx">
+      <DependentUpon>201903091546597_update.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

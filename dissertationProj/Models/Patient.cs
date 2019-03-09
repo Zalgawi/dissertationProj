@@ -18,13 +18,16 @@ namespace dissertationProj.Models
 
         public string middleName { get; set; }
 
+        public string lastName { get; set; }
+
         public string  gender { get; set; }
     
         public DateTime birthdate { get; set; }
 
-        public int age { get; set; }
+        public decimal weight { get; set; }
 
-        public int weight { get; set; }
+        public decimal height { get; set; }
+
 
         /*  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
             Pre-existing risk factors
@@ -125,14 +128,58 @@ namespace dissertationProj.Models
             this._dbContext = new ApplicationDbContext();
         }
 
-        
 
-        public Patient(string firstName, string middleName, string gender)
+
+        public Patient(string firstName, string middleName, string lastName, string gender, DateTime birthdate, decimal weight, decimal height, int parity, string civilStatus,
+                       bool previousVTE, bool surgeryVTE, bool highRiskThrombophilia, bool cancer, bool heartFailure, bool activeSystemicLupusErythematosus,
+                       bool inflammatoryPolyarthropathy, bool inflammatoryBowelDisease, bool nephroticSyndrome, bool typeIDiabetesMellitusWithNephropathy, 
+                       bool sickleCellDisease, bool currentInratvenousDrugUser, bool familyHistoryVTEFirstDegreeRelative, bool lowRiskThrombophilia, bool smoker,
+                       bool grossVaricoseVeins, int obesity, bool preEclampsiaInCurrentPregnancy, bool ARTorIVF, bool multiplePregnancy, bool caesareanSectionInLabour,
+                       bool electiveCaesareanSection, bool operativeDelivery, bool prolongedLabour, bool PPH, bool pretermBirth, bool stillBirth, bool surgicalProcedure,
+                       bool Hyperemesis, bool OHSS, bool currentSystemicInfection, bool immobilityOrDehydration)
         {
             this._dbContext = new ApplicationDbContext();
             this.firstName = firstName;
             this.middleName = middleName;
+            this.lastName = lastName;
             this.gender = gender;
+            this.birthdate = birthdate;
+            this.weight = weight;
+            this.height = height;
+            this.parity = parity;
+            this.civilStatus = civilStatus;
+            this.previousVTE = previousVTE;
+            this.surgeryVTE = surgeryVTE;
+            this.highRiskThrombophilia = highRiskThrombophilia;
+            this.cancer = cancer;
+            this.heartFailure = heartFailure;
+            this.activeSystemicLupusErythematosus = activeSystemicLupusErythematosus;
+            this.inflammatoryPolyarthropathy = inflammatoryPolyarthropathy;
+            this.inflammatoryBowelDisease = inflammatoryBowelDisease;
+            this.nephroticSyndrome = nephroticSyndrome;
+            this.typeIDiabetesMellitusWithNephropathy = typeIDiabetesMellitusWithNephropathy;
+            this.sickleCellDisease = sickleCellDisease;
+            this.currentInratvenousDrugUser = currentInratvenousDrugUser;
+            this.familyHistoryVTEFirstDegreeRelative = familyHistoryVTEFirstDegreeRelative;
+            this.lowRiskThrombophilia = lowRiskThrombophilia;
+            this.smoker = smoker;
+            this.grossVaricoseVeins = grossVaricoseVeins;
+            this.obesity = obesity;
+            this.preEclampsiaInCurrentPregnancy = preEclampsiaInCurrentPregnancy;
+            this.ARTorIVF = ARTorIVF;
+            this.multiplePregnancy = multiplePregnancy;
+            this.caesareanSectionInLabour = caesareanSectionInLabour;
+            this.electiveCaesareanSection = electiveCaesareanSection;
+            this.operativeDelivery = operativeDelivery;
+            this.prolongedLabour = prolongedLabour;
+            this.PPH = PPH;
+            this.pretermBirth = pretermBirth;
+            this.stillBirth = stillBirth;
+            this.surgicalProcedure = surgicalProcedure;
+            this.Hyperemesis = Hyperemesis;
+            this.OHSS = OHSS;
+            this.currentSystemicInfection = currentSystemicInfection;
+            this.immobilityOrDehydration = immobilityOrDehydration;
 
         }
 

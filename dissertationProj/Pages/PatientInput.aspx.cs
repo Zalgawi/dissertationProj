@@ -1,4 +1,5 @@
-﻿using System;
+﻿using dissertationProj.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,6 +12,58 @@ namespace dissertationProj.Pages
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+
+        }
+
+        public void AddPatient()
+        {
+
+            Patient newPatient = new Patient()
+            {
+                firstName = inputFirstName.Text,
+                middleName = inputMiddleName.Text,
+                lastName = inputLastName.Text,
+                gender = inputGender.SelectedValue,
+                birthdate = birthdate,
+                age = age,
+                weight = weight,
+                height = height,
+                parity = parity,
+                civilStatus = civilStatus,
+                previousVTE = previousVTE,
+                surgeryVTE = surgeryVTE,
+                highRiskThrombophilia = highRiskThrombophilia,
+                cancer = cancer,
+                heartFailure = heartFailure,
+                activeSystemicLupusErythematosus = activeSystemicLupusErythematosus,
+                inflammatoryPolyarthropathy = inflammatoryPolyarthropathy,
+                inflammatoryBowelDisease = inflammatoryBowelDisease,
+                nephroticSyndrome = nephroticSyndrome,
+                typeIDiabetesMellitusWithNephropathy = typeIDiabetesMellitusWithNephropathy,
+                sickleCellDisease = sickleCellDisease,
+                currentInratvenousDrugUser = currentInratvenousDrugUser,
+                familyHistoryVTEFirstDegreeRelative = familyHistoryVTEFirstDegreeRelative,
+                lowRiskThrombophilia = lowRiskThrombophilia,
+                smoker = smoker,
+                grossVaricoseVeins = grossVaricoseVeins,
+                obesity = obesity,
+                preEclampsiaInCurrentPregnancy = preEclampsiaInCurrentPregnancy,
+                ARTorIVF = ARTorIVF,
+                multiplePregnancy = multiplePregnancy,
+                caesareanSectionInLabour = caesareanSectionInLabour,
+                electiveCaesareanSection = electiveCaesareanSection,
+                operativeDelivery = operativeDelivery,
+                prolongedLabour = prolongedLabour,
+                PPH = PPH,
+                pretermBirth = pretermBirth,
+                stillBirth = stillBirth,
+                surgicalProcedure = surgicalProcedure,
+                Hyperemesis = Hyperemesis,
+                OHSS = OHSS,
+                currentSystemicInfection = currentSystemicInfection,
+                immobilityOrDehydration = immobilityOrDehydration,
+
+        };
 
         }
     }

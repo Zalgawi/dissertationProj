@@ -3,10 +3,60 @@ namespace dissertationProj.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class InitialCreate : DbMigration
+    public partial class update : DbMigration
     {
         public override void Up()
         {
+            CreateTable(
+                "dbo.Patients",
+                c => new
+                    {
+                        patiendId = c.Int(nullable: false, identity: true),
+                        firstName = c.String(),
+                        middleName = c.String(),
+                        lastName = c.String(),
+                        gender = c.String(),
+                        birthdate = c.DateTime(nullable: false),
+                        age = c.Int(nullable: false),
+                        weight = c.Decimal(nullable: false, precision: 18, scale: 2),
+                        height = c.Decimal(nullable: false, precision: 18, scale: 2),
+                        parity = c.Int(nullable: false),
+                        civilStatus = c.String(),
+                        previousVTE = c.Boolean(nullable: false),
+                        surgeryVTE = c.Boolean(nullable: false),
+                        highRiskThrombophilia = c.Boolean(nullable: false),
+                        cancer = c.Boolean(nullable: false),
+                        heartFailure = c.Boolean(nullable: false),
+                        activeSystemicLupusErythematosus = c.Boolean(nullable: false),
+                        inflammatoryPolyarthropathy = c.Boolean(nullable: false),
+                        inflammatoryBowelDisease = c.Boolean(nullable: false),
+                        nephroticSyndrome = c.Boolean(nullable: false),
+                        typeIDiabetesMellitusWithNephropathy = c.Boolean(nullable: false),
+                        sickleCellDisease = c.Boolean(nullable: false),
+                        currentInratvenousDrugUser = c.Boolean(nullable: false),
+                        familyHistoryVTEFirstDegreeRelative = c.Boolean(nullable: false),
+                        lowRiskThrombophilia = c.Boolean(nullable: false),
+                        smoker = c.Boolean(nullable: false),
+                        grossVaricoseVeins = c.Boolean(nullable: false),
+                        obesity = c.Int(nullable: false),
+                        preEclampsiaInCurrentPregnancy = c.Boolean(nullable: false),
+                        ARTorIVF = c.Boolean(nullable: false),
+                        multiplePregnancy = c.Boolean(nullable: false),
+                        caesareanSectionInLabour = c.Boolean(nullable: false),
+                        electiveCaesareanSection = c.Boolean(nullable: false),
+                        operativeDelivery = c.Boolean(nullable: false),
+                        prolongedLabour = c.Boolean(nullable: false),
+                        PPH = c.Boolean(nullable: false),
+                        pretermBirth = c.Boolean(nullable: false),
+                        stillBirth = c.Boolean(nullable: false),
+                        surgicalProcedure = c.Boolean(nullable: false),
+                        Hyperemesis = c.Boolean(nullable: false),
+                        OHSS = c.Boolean(nullable: false),
+                        currentSystemicInfection = c.Boolean(nullable: false),
+                        immobilityOrDehydration = c.Boolean(nullable: false),
+                    })
+                .PrimaryKey(t => t.patiendId);
+            
             CreateTable(
                 "dbo.AspNetRoles",
                 c => new
@@ -94,6 +144,7 @@ namespace dissertationProj.Migrations
             DropTable("dbo.AspNetUsers");
             DropTable("dbo.AspNetUserRoles");
             DropTable("dbo.AspNetRoles");
+            DropTable("dbo.Patients");
         }
     }
 }
