@@ -35,7 +35,7 @@ namespace dissertationProj.Models
          */
 
         //Parity is the amount of pregnancies had
-        public bool parity { get; set; }
+        public int parity { get; set; }
         // single, married, seperated or divorced
         public string civilStatus { get; set; }
         //  yes = 4 | no = 0
@@ -72,7 +72,7 @@ namespace dissertationProj.Models
         public bool grossVaricoseVeins { get; set; }
 
         //  0 = no, 1=>30 2=>40
-        public int obesity { get; set; }
+        public string obesity { get; set; }
 
 
         /*  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -130,58 +130,58 @@ namespace dissertationProj.Models
 
 
 
-        public Patient(string firstName, string middleName, string lastName, string gender, DateTime birthdate, decimal weight, decimal height, bool parity, string civilStatus,
-                       bool previousVTE, bool surgeryVTE, bool highRiskThrombophilia, bool cancer, bool heartFailure, bool activeSystemicLupusErythematosus,
-                       bool inflammatoryPolyarthropathy, bool inflammatoryBowelDisease, bool nephroticSyndrome, bool typeIDiabetesMellitusWithNephropathy,
-                       bool sickleCellDisease, bool currentInratvenousDrugUser, bool familyHistoryVTEFirstDegreeRelative, bool lowRiskThrombophilia, bool smoker,
-                       bool grossVaricoseVeins, int obesity, bool preEclampsiaInCurrentPregnancy, bool ARTorIVF, bool multiplePregnancy, bool caesareanSectionInLabour,
-                       bool electiveCaesareanSection, bool operativeDelivery, bool prolongedLabour, bool PPH, bool pretermBirth, bool stillBirth, bool surgicalProcedure,
-                       bool Hyperemesis, bool OHSS, bool currentSystemicInfection, bool immobilityOrDehydration)
-        {
-            this._dbContext = new ApplicationDbContext();
-            this.firstName = firstName;
-            this.middleName = middleName;
-            this.lastName = lastName;
-            this.gender = gender;
-            this.birthdate = birthdate;
-            this.weight = weight;
-            this.height = height;
-            this.parity = parity;
-            this.civilStatus = civilStatus;
-            this.previousVTE = previousVTE;
-            this.surgeryVTE = surgeryVTE;
-            this.highRiskThrombophilia = highRiskThrombophilia;
-            this.cancer = cancer;
-            this.heartFailure = heartFailure;
-            this.activeSystemicLupusErythematosus = activeSystemicLupusErythematosus;
-            this.inflammatoryPolyarthropathy = inflammatoryPolyarthropathy;
-            this.inflammatoryBowelDisease = inflammatoryBowelDisease;
-            this.nephroticSyndrome = nephroticSyndrome;
-            this.typeIDiabetesMellitusWithNephropathy = typeIDiabetesMellitusWithNephropathy;
-            this.sickleCellDisease = sickleCellDisease;
-            this.currentInratvenousDrugUser = currentInratvenousDrugUser;
-            this.familyHistoryVTEFirstDegreeRelative = familyHistoryVTEFirstDegreeRelative;
-            this.lowRiskThrombophilia = lowRiskThrombophilia;
-            this.smoker = smoker;
-            this.grossVaricoseVeins = grossVaricoseVeins;
-            this.obesity = obesity;
-            this.preEclampsiaInCurrentPregnancy = preEclampsiaInCurrentPregnancy;
-            this.ARTorIVF = ARTorIVF;
-            this.multiplePregnancy = multiplePregnancy;
-            this.caesareanSectionInLabour = caesareanSectionInLabour;
-            this.electiveCaesareanSection = electiveCaesareanSection;
-            this.operativeDelivery = operativeDelivery;
-            this.prolongedLabour = prolongedLabour;
-            this.PPH = PPH;
-            this.pretermBirth = pretermBirth;
-            this.stillBirth = stillBirth;
-            this.surgicalProcedure = surgicalProcedure;
-            this.Hyperemesis = Hyperemesis;
-            this.OHSS = OHSS;
-            this.currentSystemicInfection = currentSystemicInfection;
-            this.immobilityOrDehydration = immobilityOrDehydration;
+        //public Patient(string firstName, string middleName, string lastName, string gender, DateTime birthdate, decimal weight, decimal height, bool parity, string civilStatus,
+        //               bool previousVTE, bool surgeryVTE, bool highRiskThrombophilia, bool cancer, bool heartFailure, bool activeSystemicLupusErythematosus,
+        //               bool inflammatoryPolyarthropathy, bool inflammatoryBowelDisease, bool nephroticSyndrome, bool typeIDiabetesMellitusWithNephropathy,
+        //               bool sickleCellDisease, bool currentInratvenousDrugUser, bool familyHistoryVTEFirstDegreeRelative, bool lowRiskThrombophilia, bool smoker,
+        //               bool grossVaricoseVeins, int obesity, bool preEclampsiaInCurrentPregnancy, bool ARTorIVF, bool multiplePregnancy, bool caesareanSectionInLabour,
+        //               bool electiveCaesareanSection, bool operativeDelivery, bool prolongedLabour, bool PPH, bool pretermBirth, bool stillBirth, bool surgicalProcedure,
+        //               bool Hyperemesis, bool OHSS, bool currentSystemicInfection, bool immobilityOrDehydration)
+        //{
+        //    this._dbContext = new ApplicationDbContext();
+        //    this.firstName = firstName;
+        //    this.middleName = middleName;
+        //    this.lastName = lastName;
+        //    this.gender = gender;
+        //    this.birthdate = birthdate;
+        //    this.weight = weight;
+        //    this.height = height;
+        //    this.parity = parity;
+        //    this.civilStatus = civilStatus;
+        //    this.previousVTE = previousVTE;
+        //    this.surgeryVTE = surgeryVTE;
+        //    this.highRiskThrombophilia = highRiskThrombophilia;
+        //    this.cancer = cancer;
+        //    this.heartFailure = heartFailure;
+        //    this.activeSystemicLupusErythematosus = activeSystemicLupusErythematosus;
+        //    this.inflammatoryPolyarthropathy = inflammatoryPolyarthropathy;
+        //    this.inflammatoryBowelDisease = inflammatoryBowelDisease;
+        //    this.nephroticSyndrome = nephroticSyndrome;
+        //    this.typeIDiabetesMellitusWithNephropathy = typeIDiabetesMellitusWithNephropathy;
+        //    this.sickleCellDisease = sickleCellDisease;
+        //    this.currentInratvenousDrugUser = currentInratvenousDrugUser;
+        //    this.familyHistoryVTEFirstDegreeRelative = familyHistoryVTEFirstDegreeRelative;
+        //    this.lowRiskThrombophilia = lowRiskThrombophilia;
+        //    this.smoker = smoker;
+        //    this.grossVaricoseVeins = grossVaricoseVeins;
+        //    this.obesity = obesity;
+        //    this.preEclampsiaInCurrentPregnancy = preEclampsiaInCurrentPregnancy;
+        //    this.ARTorIVF = ARTorIVF;
+        //    this.multiplePregnancy = multiplePregnancy;
+        //    this.caesareanSectionInLabour = caesareanSectionInLabour;
+        //    this.electiveCaesareanSection = electiveCaesareanSection;
+        //    this.operativeDelivery = operativeDelivery;
+        //    this.prolongedLabour = prolongedLabour;
+        //    this.PPH = PPH;
+        //    this.pretermBirth = pretermBirth;
+        //    this.stillBirth = stillBirth;
+        //    this.surgicalProcedure = surgicalProcedure;
+        //    this.Hyperemesis = Hyperemesis;
+        //    this.OHSS = OHSS;
+        //    this.currentSystemicInfection = currentSystemicInfection;
+        //    this.immobilityOrDehydration = immobilityOrDehydration;
 
-        }
+        //}
 
         public void AddToDatabase()
         {

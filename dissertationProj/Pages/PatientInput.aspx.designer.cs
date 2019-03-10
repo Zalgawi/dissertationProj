@@ -82,7 +82,7 @@ namespace dissertationProj.Pages {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList inputParity;
+        protected global::System.Web.UI.WebControls.TextBox inputParity;
         
         /// <summary>
         /// inputCivilStatus control.
@@ -110,5 +110,275 @@ namespace dissertationProj.Pages {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RadioButtonList inputSurgeryVTE;
+        
+        /// <summary>
+        /// inputHighRiskThrombophilia control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButtonList inputHighRiskThrombophilia;
+        
+        /// <summary>
+        /// inputCancer control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButtonList inputCancer;
+        
+        /// <summary>
+        /// inputHeartFailure control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButtonList inputHeartFailure;
+        
+        /// <summary>
+        /// inputActiveSystemicLupusErythematosus control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButtonList inputActiveSystemicLupusErythematosus;
+        
+        /// <summary>
+        /// inputInflammatoryPolyarthropathy control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButtonList inputInflammatoryPolyarthropathy;
+        
+        /// <summary>
+        /// inputInflammatoryBowelDisease control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButtonList inputInflammatoryBowelDisease;
+        
+        /// <summary>
+        /// inputNephroticSyndrome control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButtonList inputNephroticSyndrome;
+        
+        /// <summary>
+        /// inputTypeIDiabetesMellitusWithNephropathy control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButtonList inputTypeIDiabetesMellitusWithNephropathy;
+        
+        /// <summary>
+        /// inputSickleCellDisease control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButtonList inputSickleCellDisease;
+        
+        /// <summary>
+        /// inputCurrentInratvenousDrugUser control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButtonList inputCurrentInratvenousDrugUser;
+        
+        /// <summary>
+        /// inputFamilyHistoryVTEFirstDegreeRelative control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButtonList inputFamilyHistoryVTEFirstDegreeRelative;
+        
+        /// <summary>
+        /// inputLowRiskThrombophilia control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButtonList inputLowRiskThrombophilia;
+        
+        /// <summary>
+        /// inputSmoker control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButtonList inputSmoker;
+        
+        /// <summary>
+        /// inputGrossVaricoseVeins control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButtonList inputGrossVaricoseVeins;
+        
+        /// <summary>
+        /// inputObesity control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList inputObesity;
+        
+        /// <summary>
+        /// inputPreEclampsiaInCurrentPregnancy control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButtonList inputPreEclampsiaInCurrentPregnancy;
+        
+        /// <summary>
+        /// inputARTorIVF control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButtonList inputARTorIVF;
+        
+        /// <summary>
+        /// inputMultiplePregnancy control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButtonList inputMultiplePregnancy;
+        
+        /// <summary>
+        /// inputCaesareanSectionInLabour control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButtonList inputCaesareanSectionInLabour;
+        
+        /// <summary>
+        /// inputElectiveCaesareanSection control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButtonList inputElectiveCaesareanSection;
+        
+        /// <summary>
+        /// inputOperativeDelivery control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButtonList inputOperativeDelivery;
+        
+        /// <summary>
+        /// inputProlongedLabour control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButtonList inputProlongedLabour;
+        
+        /// <summary>
+        /// inputPPH control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButtonList inputPPH;
+        
+        /// <summary>
+        /// inputPretermBirth control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButtonList inputPretermBirth;
+        
+        /// <summary>
+        /// inputStillBirth control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButtonList inputStillBirth;
+        
+        /// <summary>
+        /// inputSurgicalProcedure control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButtonList inputSurgicalProcedure;
+        
+        /// <summary>
+        /// inputHyperemesis control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButtonList inputHyperemesis;
+        
+        /// <summary>
+        /// inputOHSS control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButtonList inputOHSS;
+        
+        /// <summary>
+        /// inputCurrentSystemicInfection control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButtonList inputCurrentSystemicInfection;
+        
+        /// <summary>
+        /// inputImmobilityOrDehydration control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButtonList inputImmobilityOrDehydration;
     }
 }
