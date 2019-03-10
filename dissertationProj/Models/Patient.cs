@@ -13,15 +13,15 @@ namespace dissertationProj.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int patiendId { get; set; }
-        
+
         public string firstName { get; set; }
 
         public string middleName { get; set; }
 
         public string lastName { get; set; }
 
-        public string  gender { get; set; }
-    
+        public string gender { get; set; }
+
         public DateTime birthdate { get; set; }
 
         public decimal weight { get; set; }
@@ -35,7 +35,7 @@ namespace dissertationProj.Models
          */
 
         //Parity is the amount of pregnancies had
-        public int parity { get; set; }
+        public bool parity { get; set; }
         // single, married, seperated or divorced
         public string civilStatus { get; set; }
         //  yes = 4 | no = 0
@@ -130,9 +130,9 @@ namespace dissertationProj.Models
 
 
 
-        public Patient(string firstName, string middleName, string lastName, string gender, DateTime birthdate, decimal weight, decimal height, int parity, string civilStatus,
+        public Patient(string firstName, string middleName, string lastName, string gender, DateTime birthdate, decimal weight, decimal height, bool parity, string civilStatus,
                        bool previousVTE, bool surgeryVTE, bool highRiskThrombophilia, bool cancer, bool heartFailure, bool activeSystemicLupusErythematosus,
-                       bool inflammatoryPolyarthropathy, bool inflammatoryBowelDisease, bool nephroticSyndrome, bool typeIDiabetesMellitusWithNephropathy, 
+                       bool inflammatoryPolyarthropathy, bool inflammatoryBowelDisease, bool nephroticSyndrome, bool typeIDiabetesMellitusWithNephropathy,
                        bool sickleCellDisease, bool currentInratvenousDrugUser, bool familyHistoryVTEFirstDegreeRelative, bool lowRiskThrombophilia, bool smoker,
                        bool grossVaricoseVeins, int obesity, bool preEclampsiaInCurrentPregnancy, bool ARTorIVF, bool multiplePregnancy, bool caesareanSectionInLabour,
                        bool electiveCaesareanSection, bool operativeDelivery, bool prolongedLabour, bool PPH, bool pretermBirth, bool stillBirth, bool surgicalProcedure,
@@ -195,7 +195,7 @@ namespace dissertationProj.Models
             return 0;
         }
 
-        
-        
+
+
     }
 }

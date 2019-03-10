@@ -40,6 +40,15 @@ namespace dissertationProj.Pages {
         protected global::System.Web.UI.WebControls.TextBox inputLastName;
         
         /// <summary>
+        /// inputGender control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList inputGender;
+        
+        /// <summary>
         /// inputBirthDate control.
         /// </summary>
         /// <remarks>
@@ -65,5 +74,41 @@ namespace dissertationProj.Pages {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox inputHeight;
+        
+        /// <summary>
+        /// inputParity control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButtonList inputParity;
+        
+        /// <summary>
+        /// inputCivilStatus control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList inputCivilStatus;
+        
+        /// <summary>
+        /// inputPreviousVTE control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButtonList inputPreviousVTE;
+        
+        /// <summary>
+        /// inputSurgeryVTE control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButtonList inputSurgeryVTE;
     }
 }

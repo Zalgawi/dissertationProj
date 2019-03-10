@@ -32,21 +32,21 @@
       <div class="col-lg-10">
           <asp:TextBox  class="form-control" ID="inputLastName" runat="server" placeholder="Last Name"></asp:TextBox>
       </div>
-        <%--Gender
+        <%--Gender--%>
      <label for="inputGender" class="col-lg-2 control-label">Select Gender</label>
       <div class="col-lg-10">
-          <asp:DropDownList ID="inputGender" runat="server">
+          <asp:DropDownList class="form-control" ID="inputGender" runat="server">
               <asp:ListItem Text="Select Gender" Value="0">Select Gender</asp:ListItem>
               <asp:ListItem Text="Male" Value="1">Male</asp:ListItem>
               <asp:ListItem Text="Female" Value="2">Female</asp:ListItem>
               <asp:ListItem Text="Other" Value="3">Other</asp:ListItem>
           </asp:DropDownList>
       </div>
-            --%>
+            
         <%--Birthdate--%>
         <label for="inputBirthDate" class="col-lg-2 control-label">Birthdate</label>
       <div class="col-lg-10">
-          <asp:TextBox  class="form-control" ID="inputBirthDate" runat="server" placeholder="day/month/year"></asp:TextBox>
+          <asp:TextBox  class="form-control" ID="inputBirthDate" runat="server" placeholder="dd/mm/yyyy" TextMode="DateTime"></asp:TextBox>
       </div>
          <%--Weight--%>
      <label for="inputWeight" class="col-lg-2 control-label">Weight (Kg)</label>
@@ -71,22 +71,46 @@
     <h3 class="panel-title" style="text-align: center">Pre-existing risk factors</h3>
   </div>
   <div class="panel-body">
-      <div class="form-group">
 
-          <label for="inputParity" class="col-lg-2 control-label">Parity</label><br />
-      <div class="form-check">
-        <label class="form-check-label">
-          <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
-          Option one is this and that—be sure to include why it's great
-        </label>
-      </div>
-      <div class="form-check">
-      <label class="form-check-label">
-          <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios2" value="option2">
-          Option two can be something else and selecting it will deselect option one
-        </label>
-      </div>
+      <!--Parity-->
+      <div class="form-group">
+          <label for="inputParity" class="col-lg-2 control-label">Parity</label>
+          <asp:RadioButtonList class="form-check-input" ID="inputParity" runat="server">
+              <asp:ListItem Value="1">Yes</asp:ListItem>
+              <asp:ListItem Value="0">No</asp:ListItem>
+          </asp:RadioButtonList>
       </div>  
+       <%--Civil Status--%>
+     <label for="inputCivilStatus" class="col-lg-2 control-label">Select Civil Status</label>
+      <div class="col-lg-10">
+          <asp:DropDownList class="form-control" ID="inputCivilStatus" runat="server">
+              <asp:ListItem Text="Select Civil Status" Value="0">Select Civil Status</asp:ListItem>
+              <asp:ListItem Text="Single" Value="1">Single</asp:ListItem>
+              <asp:ListItem Text="Married" Value="2">Married</asp:ListItem>
+              <asp:ListItem Text="Seperated" Value="3">Seperated</asp:ListItem>
+              <asp:ListItem Text="Divorced" Value="4">Divorced</asp:ListItem>
+          </asp:DropDownList>
+      </div>
+      <!--previousVTE-->
+      <div class="form-group">
+          <label for="inputPreviousVTE" class="col-lg-2 control-label">Parity</label>
+          <asp:RadioButtonList class="form-check-input" ID="inputPreviousVTE" runat="server">
+              <asp:ListItem Value="1">Yes</asp:ListItem>
+              <asp:ListItem Value="0">No</asp:ListItem>
+          </asp:RadioButtonList>
+      </div>  
+      <!--surgeryVTE-->
+      <div class="form-group">
+          <label for="inputSurgeryVTE" class="col-lg-2 control-label">Parity</label>
+          <asp:RadioButtonList class="form-check-input" ID="inputSurgeryVTE" runat="server">
+              <asp:ListItem Value="1">Yes</asp:ListItem>
+              <asp:ListItem Value="0">No</asp:ListItem>
+          </asp:RadioButtonList>
+      </div>  
+
+
+
+
   </div>
     </div>
 

@@ -1,6 +1,7 @@
 ﻿using dissertationProj.Models;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -24,12 +25,12 @@ namespace dissertationProj.Pages
                 middleName = inputMiddleName.Text,
                 lastName = inputLastName.Text,
                 gender = inputGender.SelectedValue,
-                birthdate = birthdate,
-                age = age,
-                weight = weight,
+                birthdate = DateTime.ParseExact(inputBirthDate.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture),
+                age = ,
+                weight = inputWeight.,
                 height = height,
-                parity = parity,
-                civilStatus = civilStatus,
+                parity = inputParity.SelectedValue,
+                civilStatus = inputCivilStatus.SelectedValue,
                 previousVTE = previousVTE,
                 surgeryVTE = surgeryVTE,
                 highRiskThrombophilia = highRiskThrombophilia,
@@ -63,7 +64,7 @@ namespace dissertationProj.Pages
                 currentSystemicInfection = currentSystemicInfection,
                 immobilityOrDehydration = immobilityOrDehydration,
 
-        };
+            };
 
         }
     }
