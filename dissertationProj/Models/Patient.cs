@@ -12,7 +12,11 @@ namespace dissertationProj.Models
         //The patients ID
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int patiendId { get; set; }
+        public int patientId { get; set; }
+
+        [ForeignKey("ApplicationUser")]
+        public string Id { get; set; }
+        public virtual ApplicationUser ApplicationUser { get; set; }
 
         public string firstName { get; set; }
 

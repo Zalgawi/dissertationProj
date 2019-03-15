@@ -3,7 +3,7 @@
     <h1 class="text-center">Input New Patient</h1>
     <div style="border-color:#00ffff"  class="jumbotronTwo">
         
-        <form class="form-horizontal">
+        <div  class="form-horizontal">
   <fieldset>
 
       <%--------------------------------------
@@ -380,18 +380,17 @@
   </div>
     </div>
 
-    <div class="form-group">
-      &nbsp;</div>
-    <div class="form-group">
+    
+    <div>
       <div class="col-lg-10 col-lg-offset-2">
         <button type="reset" class="btn btn-default">Cancel</button>
-        <button type="submit" class="btn btn-primary">Submit</button>
+          <asp:Button ID="formSubmitBtn" runat="server" autopostback="false" onclick="AddPatient" Text="Button" />
       </div>
     </div>
 
      
   </fieldset>
-</form>
+</div>
         
     </div>
 </asp:Content>

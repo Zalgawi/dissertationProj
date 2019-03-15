@@ -365,9 +365,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201903101418094_enabledatabase.cs" />
-    <Compile Include="Migrations\201903101418094_enabledatabase.Designer.cs">
-      <DependentUpon>201903101418094_enabledatabase.cs</DependentUpon>
+    <Compile Include="Migrations\201903142306536_updatedpatient.cs" />
+    <Compile Include="Migrations\201903142306536_updatedpatient.Designer.cs">
+      <DependentUpon>201903142306536_updatedpatient.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -425,8 +425,8 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201903101418094_enabledatabase.resx">
-      <DependentUpon>201903101418094_enabledatabase.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201903142306536_updatedpatient.resx">
+      <DependentUpon>201903142306536_updatedpatient.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

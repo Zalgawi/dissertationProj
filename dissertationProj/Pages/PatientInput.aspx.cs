@@ -1,4 +1,5 @@
 ﻿using dissertationProj.Models;
+using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -13,19 +14,21 @@ namespace dissertationProj.Pages
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!Page.User.Identity.IsAuthenticated)
+            {
+                string strCurrentUserId = User.Identity.GetUserId();
+                Response.Redirect("/Account/Login", true);
 
+            }
         }
 
-        public void AddPatient()
+        protected void AddPatient(object sender, EventArgs e)
         {
-
-          
-            
-
+            var User = System.Web.HttpContext.Current.User.Identity.GetUserId();
 
             Patient newPatient = new Patient()
             {
-
+                Id = User,
                 firstName = inputFirstName.Text,
                 middleName = inputMiddleName.Text,
                 lastName = inputLastName.Text,
@@ -69,6 +72,12 @@ namespace dissertationProj.Pages
                 immobilityOrDehydration = Convert.ToBoolean(Int32.Parse(inputImmobilityOrDehydration.SelectedValue)),
 
             };
+
+            using (var _dbContext = new ApplicationDbContext())
+            {
+                _dbContext.Patients.Add(newPatient);
+                _dbContext.SaveChanges();
+            }
 
         }
     }
