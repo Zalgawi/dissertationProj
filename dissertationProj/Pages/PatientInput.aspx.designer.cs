@@ -238,15 +238,6 @@ namespace dissertationProj.Pages {
         protected global::System.Web.UI.WebControls.RadioButtonList inputGrossVaricoseVeins;
         
         /// <summary>
-        /// inputObesity control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList inputObesity;
-        
-        /// <summary>
         /// inputPreEclampsiaInCurrentPregnancy control.
         /// </summary>
         /// <remarks>

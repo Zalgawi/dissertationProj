@@ -194,6 +194,7 @@
     </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Pages\PatientInput.aspx" />
+    <Content Include="Pages\patientOutput.aspx" />
     <Content Include="Pages\Scanner.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -365,9 +366,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201903142306536_updatedpatient.cs" />
-    <Compile Include="Migrations\201903142306536_updatedpatient.Designer.cs">
-      <DependentUpon>201903142306536_updatedpatient.cs</DependentUpon>
+    <Compile Include="Migrations\201903151616339_startup.cs" />
+    <Compile Include="Migrations\201903151616339_startup.Designer.cs">
+      <DependentUpon>201903151616339_startup.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -378,6 +379,13 @@
     </Compile>
     <Compile Include="Pages\PatientInput.aspx.designer.cs">
       <DependentUpon>PatientInput.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\patientOutput.aspx.cs">
+      <DependentUpon>patientOutput.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\patientOutput.aspx.designer.cs">
+      <DependentUpon>patientOutput.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Scanner.aspx.cs">
       <DependentUpon>Scanner.aspx</DependentUpon>
@@ -425,8 +433,8 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201903142306536_updatedpatient.resx">
-      <DependentUpon>201903142306536_updatedpatient.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201903151616339_startup.resx">
+      <DependentUpon>201903151616339_startup.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -218,15 +218,7 @@
               <asp:ListItem Value="0">No</asp:ListItem>
           </asp:RadioButtonList>
       </div> 
-       <%--obesity--%>
-     <label for="inputObesity" class="col-lg-2 control-label">Obesity</label>
-      <div class="col-lg-10">
-          <asp:DropDownList class="form-control" ID="inputObesity" runat="server">
-              <asp:ListItem Text="No" Value="No">No</asp:ListItem>
-              <asp:ListItem Text="Level I" Value="Level I">Level I</asp:ListItem>
-              <asp:ListItem Text="Level II" Value="Level II">Level II</asp:ListItem>
-             </asp:DropDownList>
-      </div>
+      
        </div>
     </div>
 

@@ -54,7 +54,7 @@ namespace dissertationProj.Pages
                 lowRiskThrombophilia = Convert.ToBoolean(Int32.Parse(inputLowRiskThrombophilia.SelectedValue)),
                 smoker = Convert.ToBoolean(Int32.Parse(inputSmoker.SelectedValue)),
                 grossVaricoseVeins = Convert.ToBoolean(Int32.Parse(inputGrossVaricoseVeins.SelectedValue)),
-                obesity = inputObesity.SelectedValue,
+                //obesity = inputObesity.SelectedValue,
                 preEclampsiaInCurrentPregnancy = Convert.ToBoolean(Int32.Parse(inputPreEclampsiaInCurrentPregnancy.SelectedValue)),
                 ARTorIVF = Convert.ToBoolean(Int32.Parse(inputARTorIVF.SelectedValue)),
                 multiplePregnancy = Convert.ToBoolean(Int32.Parse(inputMultiplePregnancy.SelectedValue)),
@@ -72,6 +72,8 @@ namespace dissertationProj.Pages
                 immobilityOrDehydration = Convert.ToBoolean(Int32.Parse(inputImmobilityOrDehydration.SelectedValue)),
 
             };
+
+            newPatient.bmiCalculator();
 
             using (var _dbContext = new ApplicationDbContext())
             {

@@ -132,61 +132,7 @@ namespace dissertationProj.Models
             this._dbContext = new ApplicationDbContext();
         }
 
-
-
-        //public Patient(string firstName, string middleName, string lastName, string gender, DateTime birthdate, decimal weight, decimal height, bool parity, string civilStatus,
-        //               bool previousVTE, bool surgeryVTE, bool highRiskThrombophilia, bool cancer, bool heartFailure, bool activeSystemicLupusErythematosus,
-        //               bool inflammatoryPolyarthropathy, bool inflammatoryBowelDisease, bool nephroticSyndrome, bool typeIDiabetesMellitusWithNephropathy,
-        //               bool sickleCellDisease, bool currentInratvenousDrugUser, bool familyHistoryVTEFirstDegreeRelative, bool lowRiskThrombophilia, bool smoker,
-        //               bool grossVaricoseVeins, int obesity, bool preEclampsiaInCurrentPregnancy, bool ARTorIVF, bool multiplePregnancy, bool caesareanSectionInLabour,
-        //               bool electiveCaesareanSection, bool operativeDelivery, bool prolongedLabour, bool PPH, bool pretermBirth, bool stillBirth, bool surgicalProcedure,
-        //               bool Hyperemesis, bool OHSS, bool currentSystemicInfection, bool immobilityOrDehydration)
-        //{
-        //    this._dbContext = new ApplicationDbContext();
-        //    this.firstName = firstName;
-        //    this.middleName = middleName;
-        //    this.lastName = lastName;
-        //    this.gender = gender;
-        //    this.birthdate = birthdate;
-        //    this.weight = weight;
-        //    this.height = height;
-        //    this.parity = parity;
-        //    this.civilStatus = civilStatus;
-        //    this.previousVTE = previousVTE;
-        //    this.surgeryVTE = surgeryVTE;
-        //    this.highRiskThrombophilia = highRiskThrombophilia;
-        //    this.cancer = cancer;
-        //    this.heartFailure = heartFailure;
-        //    this.activeSystemicLupusErythematosus = activeSystemicLupusErythematosus;
-        //    this.inflammatoryPolyarthropathy = inflammatoryPolyarthropathy;
-        //    this.inflammatoryBowelDisease = inflammatoryBowelDisease;
-        //    this.nephroticSyndrome = nephroticSyndrome;
-        //    this.typeIDiabetesMellitusWithNephropathy = typeIDiabetesMellitusWithNephropathy;
-        //    this.sickleCellDisease = sickleCellDisease;
-        //    this.currentInratvenousDrugUser = currentInratvenousDrugUser;
-        //    this.familyHistoryVTEFirstDegreeRelative = familyHistoryVTEFirstDegreeRelative;
-        //    this.lowRiskThrombophilia = lowRiskThrombophilia;
-        //    this.smoker = smoker;
-        //    this.grossVaricoseVeins = grossVaricoseVeins;
-        //    this.obesity = obesity;
-        //    this.preEclampsiaInCurrentPregnancy = preEclampsiaInCurrentPregnancy;
-        //    this.ARTorIVF = ARTorIVF;
-        //    this.multiplePregnancy = multiplePregnancy;
-        //    this.caesareanSectionInLabour = caesareanSectionInLabour;
-        //    this.electiveCaesareanSection = electiveCaesareanSection;
-        //    this.operativeDelivery = operativeDelivery;
-        //    this.prolongedLabour = prolongedLabour;
-        //    this.PPH = PPH;
-        //    this.pretermBirth = pretermBirth;
-        //    this.stillBirth = stillBirth;
-        //    this.surgicalProcedure = surgicalProcedure;
-        //    this.Hyperemesis = Hyperemesis;
-        //    this.OHSS = OHSS;
-        //    this.currentSystemicInfection = currentSystemicInfection;
-        //    this.immobilityOrDehydration = immobilityOrDehydration;
-
-        //}
-
+       
         public void AddToDatabase()
         {
             _dbContext.Patients.Add(this);
@@ -199,7 +145,40 @@ namespace dissertationProj.Models
             return 0;
         }
 
+        public void bmiCalculator()
+            //The formula to calculate a BMI is kg/m^2   (^2 means squared)
+        {
+            if(height != 0)
+            {
+                //BMI uses meters whereas my height intake is in cm, therefore I must convert cm into m by dividing it by 100.
+                //
+                var bmiHeight = (this.height / 100) * (this.height / 100);
+                var bmiWeight = this.weight;
 
+                var finalBMIcalculation = bmiWeight / bmiHeight;
+
+
+                if (finalBMIcalculation > 40)
+                {
+                    this.obesity = "2";
+                }
+                else if (finalBMIcalculation > 30)
+                {
+                    this.obesity = "1";
+                }
+                else if (finalBMIcalculation < 30)
+                {
+                    this.obesity = "0";
+                }
+            }
+            else
+            {
+                Exception e = new Exception("One of required fields is empty");
+                throw e;
+            }
+            
+
+        }
 
     }
 }
