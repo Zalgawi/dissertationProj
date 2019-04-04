@@ -370,9 +370,25 @@
     <Compile Include="Migrations\201903151616339_startup.Designer.cs">
       <DependentUpon>201903151616339_startup.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201903181353278_addedRiskScore.cs" />
+    <Compile Include="Migrations\201903181353278_addedRiskScore.Designer.cs">
+      <DependentUpon>201903181353278_addedRiskScore.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904041006266_BreakingDownRisks.cs" />
+    <Compile Include="Migrations\201904041006266_BreakingDownRisks.Designer.cs">
+      <DependentUpon>201904041006266_BreakingDownRisks.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904041015483_changePatientClass.cs" />
+    <Compile Include="Migrations\201904041015483_changePatientClass.Designer.cs">
+      <DependentUpon>201904041015483_changePatientClass.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\ObstetricFactors.cs" />
     <Compile Include="Models\Patient.cs" />
+    <Compile Include="Models\PreExistingFactors.cs" />
+    <Compile Include="Models\Risk.cs" />
+    <Compile Include="Models\TransientFactors.cs" />
     <Compile Include="Pages\PatientInput.aspx.cs">
       <DependentUpon>PatientInput.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -435,6 +451,15 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201903151616339_startup.resx">
       <DependentUpon>201903151616339_startup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903181353278_addedRiskScore.resx">
+      <DependentUpon>201903181353278_addedRiskScore.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904041006266_BreakingDownRisks.resx">
+      <DependentUpon>201904041006266_BreakingDownRisks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904041015483_changePatientClass.resx">
+      <DependentUpon>201904041015483_changePatientClass.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

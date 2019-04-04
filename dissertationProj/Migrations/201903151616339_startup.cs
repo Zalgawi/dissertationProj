@@ -33,7 +33,7 @@ namespace dissertationProj.Migrations
                         nephroticSyndrome = c.Boolean(nullable: false),
                         typeIDiabetesMellitusWithNephropathy = c.Boolean(nullable: false),
                         sickleCellDisease = c.Boolean(nullable: false),
-                        currentInratvenousDrugUser = c.Boolean(nullable: false),
+                        currentIntravenousDrugUser = c.Boolean(nullable: false),
                         familyHistoryVTEFirstDegreeRelative = c.Boolean(nullable: false),
                         lowRiskThrombophilia = c.Boolean(nullable: false),
                         smoker = c.Boolean(nullable: false),

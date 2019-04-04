@@ -1,19 +1,27 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="PatientInput.aspx.cs" Inherits="dissertationProj.Pages.PatientInput" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <h1 class="text-center">Input New Patient</h1>
-    <div style="border-color:#00ffff"  class="jumbotronTwo">
-        
-        <div  class="form-horizontal">
-  <fieldset>
+    <h1 class="text-center">Input New Patient</h1>        
+        <%-- The code below is the tabs at the top --%>
+        <ul class="nav nav-tabs">
+  <li class="active"><a href="#medicalInfo" data-toggle="tab" aria-expanded="false">Medical Information</a></li>
+  <li class=""><a href="#preexistingRiskFactors" data-toggle="tab" aria-expanded="true">Pre-existing risk factors</a></li>
+  <li class=""><a href="#obstetricRiskFactors" data-toggle="tab" aria-expanded="true">Obstetric risk factors</a></li>
+  <li class=""><a href="#transientRiskFactors" data-toggle="tab" aria-expanded="true">Transient risk factors</a></li>
+        </ul>
 
+        <%-- The line of code below declares the info thats stored within the tabs --%>
+<div id="myTabContent" class="tab-content">
+        
+        <%--Each tab-pane is the exact info for each of the tabs  --%>
+  <div class="tab-pane fade active in" id="medicalInfo">
+
+      <div class="panel panel-success">
+          
       <%--------------------------------------
           Inserting General Patient Data
       --------------------------------------%>
 
-<div class="panel panel-success">
-  <div class="panel-heading">
-    <h3 class="panel-title" style="text-align: center">Medical Information</h3>
-  </div>
+
   <div class="panel-body">
   <div class="form-group">
       
@@ -58,19 +66,21 @@
       <div class="col-lg-10">
           <asp:TextBox  class="form-control" ID="inputHeight" runat="server" placeholder="Height (Centimeters)"></asp:TextBox>
       </div>    
+        
     </div>    
   </div>
     </div>
 
-      <%--------------------------------------
+  </div>
+    <%----------------------------------------------------------------------------------------------------%>
+  <div class="tab-pane fade" id="preexistingRiskFactors">
+
+<div class="panel panel-success">
+          <%--------------------------------------
           Inserting Pre-existing risk factors
       --------------------------------------%>
-
-      <div class="panel panel-success">
-  <div class="panel-heading">
-    <h3 class="panel-title" style="text-align: center">Pre-existing risk factors</h3>
-  </div>
   <div class="panel-body">
+
 
       <!--Parity-->
       <div class="form-group">
@@ -178,10 +188,10 @@
               <asp:ListItem Value="0">No</asp:ListItem>
           </asp:RadioButtonList>
       </div>  
-      <!--currentInratvenousDrugUser-->
+      <!--currentIntravenousDrugUser-->
       <div class="form-group">
-          <label for="inputCurrentInratvenousDrugUser" class="col-lg-2 control-label">Current Inratvenous Drug User</label>
-          <asp:RadioButtonList class="form-check-input" ID="inputCurrentInratvenousDrugUser" runat="server">
+          <label for="inputCurrentIntravenousDrugUser" class="col-lg-2 control-label">Current Intravenous Drug User</label>
+          <asp:RadioButtonList class="form-check-input" ID="inputCurrentIntravenousDrugUser" runat="server">
               <asp:ListItem Value="1">Yes</asp:ListItem>
               <asp:ListItem Value="0">No</asp:ListItem>
           </asp:RadioButtonList>
@@ -220,17 +230,16 @@
       </div> 
       
        </div>
-    </div>
+    </div> 
 
+      </div>
+    <%----------------------------------------------------------------------------------------------------%>
+  <div class="tab-pane fade" id="obstetricRiskFactors">
 
-      <%--------------------------------------
+<div class="panel panel-success">
+     <%--------------------------------------
           Inserting Obstetric risk factors
       --------------------------------------%>
-
-      <div class="panel panel-success">
-  <div class="panel-heading">
-    <h3 class="panel-title" style="text-align: center">Obstetric risk factors</h3>
-  </div>
   <div class="panel-body">
       <div class="form-group">
           <!--preEclampsiaInCurrentPregnancy-->
@@ -316,16 +325,16 @@
 
       </div>  
   </div>
+    </div> 
+        
     </div>
+    <%----------------------------------------------------------------------------------------------------%>
+  <div class="tab-pane fade" id="transientRiskFactors">
 
-      <%--------------------------------------
+<div class="panel panel-success">
+    <%--------------------------------------
           Inserting Transient risk factors
       --------------------------------------%>
-
-      <div class="panel panel-success">
-  <div class="panel-heading">
-    <h3 class="panel-title" style="text-align: center">Transient risk factors  </h3>
-  </div>
   <div class="panel-body">
       <div class="form-group">
           <!--surgicalProcedure-->
@@ -370,19 +379,16 @@
       </div> 
       </div>  
   </div>
-    </div>
+    </div>  
+        </div>
 
-    
-    <div>
+        </div>
+
       <div class="col-lg-10 col-lg-offset-2">
         <button type="reset" class="btn btn-default">Cancel</button>
-          <asp:Button ID="formSubmitBtn" runat="server" autopostback="false" onclick="AddPatient" Text="Button" />
+          <asp:Button ID="formSubmitBtn" class="btn btn-default" runat="server" autopostback="false" onclick="AddPatient" Text="Button" />
+          <br />
       </div>
-    </div>
 
-     
-  </fieldset>
-</div>
-        
-    </div>
+
 </asp:Content>

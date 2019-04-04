@@ -193,13 +193,13 @@ namespace dissertationProj.Pages {
         protected global::System.Web.UI.WebControls.RadioButtonList inputSickleCellDisease;
         
         /// <summary>
-        /// inputCurrentInratvenousDrugUser control.
+        /// inputCurrentIntravenousDrugUser control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList inputCurrentInratvenousDrugUser;
+        protected global::System.Web.UI.WebControls.RadioButtonList inputCurrentIntravenousDrugUser;
         
         /// <summary>
         /// inputFamilyHistoryVTEFirstDegreeRelative control.

@@ -4,7 +4,6 @@
     <div class="jumbotron">
 
         <br />
-        <asp:Label class="label label-default" ID="outputAnonymous" runat="server"></asp:Label>
         <br />
         <asp:Label class="label label-default" ID="outputlikeORdislike" runat="server"></asp:Label>
         <div id="outputTitleContainer" class="text-center"><asp:Label class="label label-default" ID="outputTitle" runat="server" style="font-size: xx-large"></asp:Label></div>
