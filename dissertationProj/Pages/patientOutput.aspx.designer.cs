@@ -13,48 +13,21 @@ namespace dissertationProj.Pages {
     public partial class patientOutput {
         
         /// <summary>
-        /// outputlikeORdislike control.
+        /// outputRiskAssessmentScore control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label outputlikeORdislike;
+        protected global::System.Web.UI.WebControls.Label outputRiskAssessmentScore;
         
         /// <summary>
-        /// outputTitle control.
+        /// patientIdHidden control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label outputTitle;
-        
-        /// <summary>
-        /// outputId control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label outputId;
-        
-        /// <summary>
-        /// outputBody control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label outputBody;
-        
-        /// <summary>
-        /// outputCategory control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label outputCategory;
+        protected global::System.Web.UI.WebControls.HiddenField patientIdHidden;
     }
 }

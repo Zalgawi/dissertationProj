@@ -38,7 +38,31 @@ namespace dissertationProj.Pages
             }
 
 
+            /*
 
+       if (riskAssessmentScore >= 4)
+       {
+           display: If total score ≥ 4 antenatally, consider thromboprophylaxis from the first trimester.
+       }
+       else (riskAssessmentScore == 3)
+       {
+           display: If total score 3 antenatally, consider thromboprophylaxis from 28 weeks.
+       }
+       else (riskAssessmentScore >= 2)
+       {
+           display: If total score ≥ 2 postnatally, consider thromboprophylaxis for at least 10 days.
+       }
+       else ()
+
+      */
+
+
+            //If admitted to hospital antenatally consider thromboprophylaxis.
+
+            //If prolonged admission (≥ 3 days) or readmission to hospital within the puerperium consider thromboprophylaxis.
+
+            //For patients with an identified bleeding risk, the balance of risks of bleeding and thrombosis should be discussed
+            //in consultation with a haematologist with expertise in thrombosis and bleeding in pregnancy.
 
         }
     }

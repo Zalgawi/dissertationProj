@@ -37,6 +37,7 @@ namespace dissertationProj.Pages
                 weight = Decimal.Parse(inputWeight.Text),
                 height = Decimal.Parse(inputHeight.Text),                
                 civilStatus = inputCivilStatus.SelectedValue,
+                dateOfAdmission = DateTime.ParseExact(inputDateOfAdmission.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture),
 
             };
 
@@ -120,6 +121,18 @@ namespace dissertationProj.Pages
                 _dbContext.Patients.Add(newPatient);
                 _dbContext.SaveChanges();
             }
+
+
+            //Display success message and clear the form.
+            System.Windows.Forms.MessageBox.Show("You have successfully submitted a patient!");
+            inputFirstName.Text = "";
+            inputMiddleName.Text = "";
+            inputLastName.Text = "";
+            inputGender.SelectedValue = "Select Gender";
+            inputBirthDate.Text = "";
+            inputWeight.Text = "";
+            inputHeight.Text = "";
+            inputDateOfAdmission.Text = "";
 
         }
     }

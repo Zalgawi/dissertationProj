@@ -16,9 +16,9 @@ namespace dissertationProj.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int patientId { get; set; }
 
-        [ForeignKey("ApplicationUser")]
+      //  [ForeignKey("ApplicationUser")]
         public string Id { get; set; }
-        public virtual ApplicationUser ApplicationUser { get; set; }
+      //  public virtual ApplicationUser ApplicationUser { get; set; }
 
         /*  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
             General Patient Data
@@ -43,6 +43,8 @@ namespace dissertationProj.Models
         //  0 = no, 1=>30 2=>40
 
         public decimal bmi { get; set; }
+
+        public DateTime dateOfAdmission { get; set; }
 
         
 
