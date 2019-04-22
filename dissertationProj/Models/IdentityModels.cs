@@ -8,12 +8,20 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using dissertationProj.Models;
 using System.Data.Entity;
+using System.Collections.Generic;
 
 namespace dissertationProj.Models
 {
     // You can add User data for the user by adding more properties to your User class, please visit https://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
     public class ApplicationUser : IdentityUser
     {
+        public ICollection<ApplicationUser> ApplicationUsers { get; set; }
+
+        
+        public string firstName { get; set; }
+        public string secondName { get; set; }
+        public string lastName { get; set; }
+
         public ClaimsIdentity GenerateUserIdentity(ApplicationUserManager manager)
         {
             // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType

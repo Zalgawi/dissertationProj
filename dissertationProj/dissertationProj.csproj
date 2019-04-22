@@ -109,6 +109,12 @@
     <Reference Include="Microsoft.AspNet.FriendlyUrls">
       <HintPath>..\packages\Microsoft.AspNet.FriendlyUrls.Core.1.0.2\lib\net45\Microsoft.AspNet.FriendlyUrls.dll</HintPath>
     </Reference>
+    <Reference Include="zxing, Version=0.16.4.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZXing.Net.0.16.4\lib\net461\zxing.dll</HintPath>
+    </Reference>
+    <Reference Include="zxing.presentation, Version=0.16.4.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZXing.Net.0.16.4\lib\net461\zxing.presentation.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="EntityFramework">
@@ -378,31 +384,16 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201903151616339_startup.cs" />
-    <Compile Include="Migrations\201903151616339_startup.Designer.cs">
-      <DependentUpon>201903151616339_startup.cs</DependentUpon>
+    <Compile Include="Migrations\201904211249017_updatedd.cs" />
+    <Compile Include="Migrations\201904211249017_updatedd.Designer.cs">
+      <DependentUpon>201904211249017_updatedd.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201903181353278_addedRiskScore.cs" />
-    <Compile Include="Migrations\201903181353278_addedRiskScore.Designer.cs">
-      <DependentUpon>201903181353278_addedRiskScore.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201904041006266_BreakingDownRisks.cs" />
-    <Compile Include="Migrations\201904041006266_BreakingDownRisks.Designer.cs">
-      <DependentUpon>201904041006266_BreakingDownRisks.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201904041015483_changePatientClass.cs" />
-    <Compile Include="Migrations\201904041015483_changePatientClass.Designer.cs">
-      <DependentUpon>201904041015483_changePatientClass.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201904061310130_addedPatientDateOfAdmission.cs" />
-    <Compile Include="Migrations\201904061310130_addedPatientDateOfAdmission.Designer.cs">
-      <DependentUpon>201904061310130_addedPatientDateOfAdmission.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201904081246107_checkingfk.cs" />
-    <Compile Include="Migrations\201904081246107_checkingfk.Designer.cs">
-      <DependentUpon>201904081246107_checkingfk.cs</DependentUpon>
+    <Compile Include="Migrations\201904211614188_testermigrat.cs" />
+    <Compile Include="Migrations\201904211614188_testermigrat.Designer.cs">
+      <DependentUpon>201904211614188_testermigrat.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Ajax Models\PatientDoctorAjaxModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ObstetricFactors.cs" />
     <Compile Include="Models\Patient.cs" />
@@ -456,6 +447,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="images\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -469,23 +461,11 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201903151616339_startup.resx">
-      <DependentUpon>201903151616339_startup.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201904211249017_updatedd.resx">
+      <DependentUpon>201904211249017_updatedd.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201903181353278_addedRiskScore.resx">
-      <DependentUpon>201903181353278_addedRiskScore.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201904041006266_BreakingDownRisks.resx">
-      <DependentUpon>201904041006266_BreakingDownRisks.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201904041015483_changePatientClass.resx">
-      <DependentUpon>201904041015483_changePatientClass.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201904061310130_addedPatientDateOfAdmission.resx">
-      <DependentUpon>201904061310130_addedPatientDateOfAdmission.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201904081246107_checkingfk.resx">
-      <DependentUpon>201904081246107_checkingfk.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201904211614188_testermigrat.resx">
+      <DependentUpon>201904211614188_testermigrat.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

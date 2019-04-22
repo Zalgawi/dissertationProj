@@ -49,13 +49,40 @@ namespace dissertationProj.Pages {
         protected global::System.Web.UI.WebControls.DropDownList inputGender;
         
         /// <summary>
+        /// inputCivilStatus control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList inputCivilStatus;
+        
+        /// <summary>
+        /// drpCalMonth control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList drpCalMonth;
+        
+        /// <summary>
+        /// drpCalYear control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList drpCalYear;
+        
+        /// <summary>
         /// inputBirthDate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox inputBirthDate;
+        protected global::System.Web.UI.WebControls.Calendar inputBirthDate;
         
         /// <summary>
         /// inputWeight control.
@@ -76,13 +103,31 @@ namespace dissertationProj.Pages {
         protected global::System.Web.UI.WebControls.TextBox inputHeight;
         
         /// <summary>
+        /// drpCalMonth2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList drpCalMonth2;
+        
+        /// <summary>
+        /// drpCalYear2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList drpCalYear2;
+        
+        /// <summary>
         /// inputDateOfAdmission control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox inputDateOfAdmission;
+        protected global::System.Web.UI.WebControls.Calendar inputDateOfAdmission;
         
         /// <summary>
         /// inputParity control.
@@ -92,15 +137,6 @@ namespace dissertationProj.Pages {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox inputParity;
-        
-        /// <summary>
-        /// inputCivilStatus control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList inputCivilStatus;
         
         /// <summary>
         /// inputPreviousVTE control.
@@ -389,5 +425,14 @@ namespace dissertationProj.Pages {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button formSubmitBtn;
+        
+        /// <summary>
+        /// patientQRCode control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image patientQRCode;
     }
 }

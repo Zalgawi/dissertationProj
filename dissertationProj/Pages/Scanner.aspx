@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Scanner.aspx.cs" Inherits="dissertationProj.Pages.Scanner" %>
+﻿    <%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Scanner.aspx.cs" Inherits="dissertationProj.Pages.Scanner" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
@@ -9,9 +9,12 @@
         <hr />
         <p class="lead" style="text-align: center">Enter the patient ID to display the appropriate data.</p>
         <p class="lead" style="text-align: center"><input class="form-control form-control-lg" style="display:block; margin: 0 auto;" type="text" placeholder="Input patient's ID" id="patientIdInput"></p>
-        <p class="lead" style="text-align: center"><a href="/Pages/patientOutput" class="btn btn-success">Look up &raquo;</a></p>
-        <hr />
-        <p class="lead" style="text-align: center"><a class="btn btn-success btn-sm">Scan QR Code</a></p>
+        <p class="lead" style="text-align: center"><asp:Button ID="patientLookup" href="/Pages/patientOutput" runat="server" class="btn btn-success" Text="Look Up" />
+                  <hr />
+                <p class="lead" style="text-align: center"><asp:Button ID="patientQRScanner" href="/Pages/PatientInput" runat="server" class="btn btn-success btn-sm" Text="Scan QR Code" OnClick="patientQRScanner_Click" /></p>
+                <br /> <br />
+                <p class="lead" style="text-align: center"><asp:Label ID="lblQRCode" runat="server"></asp:Label></p>
+                
 
     </div>
 
@@ -20,9 +23,9 @@
     <table class="display responsive no-wrap"" id="patientsTable">
         <thead>
             <tr>
+                <th>Patient ID</th>                
+                <th>Personnel Name</th>
                 <th>Admission Date</th>
-                <th>Personnel ID</th>
-                <th>Patient ID</th>
                 <th>First Name</th>
                 <th>Middle Name</th>
                 <th>Last Name</th>
@@ -53,20 +56,23 @@
 
                     {
                         render: function (data, type, row, meta) {
-                            return '<a href="/PatientDisplay?id=' + row.patientId.toString() + '">' + row.patientId + '</a>';
+                            return '<a href="/PatientDisplay?id=' + row.patient.patientId.toString() + '">' + row.patient.patientId + '</a>';
                         }
                     },
-                    { data: "Id" },
+                    { render: function (data, type, row, meta) {
+                            return row.personnel.firstName  +' '+ row.personnel.lastName;
+                    }
+                    },
                     {
                         render: function (data, type, row, meta) {
-                            var dateOfAdmission = new Date(row.dateOfAdmission);
-                            return dateOfAdmission.toLocaleString();
+                            var dateOfAdmission = new Date(row.patient.dateOfAdmission);
+                            return dateOfAdmission.toDateString();
                         }
                     },
-                    { data: "firstName" },
-                    { data: "middleName" },
-                    { data: "lastName" },
-                    { data: "riskAssessmentScore" },
+                    { data: "patient.firstName" },
+                    { data: "patient.middleName" },
+                    { data: "patient.lastName" },
+                    { data: "patient.riskAssessmentScore" },
                     
                 ]
             });

@@ -33,7 +33,7 @@ namespace dissertationProj.Models
 
         public string gender { get; set; }
 
-        public DateTime birthdate { get; set; }
+        public DateTime ?birthdate { get; set; }
 
         public decimal weight { get; set; }
 
@@ -44,7 +44,7 @@ namespace dissertationProj.Models
 
         public decimal bmi { get; set; }
 
-        public DateTime dateOfAdmission { get; set; }
+        public DateTime ?dateOfAdmission { get; set; }
 
         
 

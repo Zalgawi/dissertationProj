@@ -7,13 +7,13 @@ namespace dissertationProj.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class addedRiskScore : IMigrationMetadata
+    public sealed partial class updatedd : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(addedRiskScore));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(updatedd));
         
         string IMigrationMetadata.Id
         {
-            get { return "201903181353278_addedRiskScore"; }
+            get { return "201904211249017_updatedd"; }
         }
         
         string IMigrationMetadata.Source

@@ -7,13 +7,13 @@ namespace dissertationProj.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class BreakingDownRisks : IMigrationMetadata
+    public sealed partial class testermigrat : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(BreakingDownRisks));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(testermigrat));
         
         string IMigrationMetadata.Id
         {
-            get { return "201904041006266_BreakingDownRisks"; }
+            get { return "201904211614188_testermigrat"; }
         }
         
         string IMigrationMetadata.Source

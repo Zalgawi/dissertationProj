@@ -8395,3 +8395,7 @@ a.list-group-item-danger.active {
 .popover {
     color: #2c3e50;
 }
+
+formSubmitBtn:disabled {
+    color: #95a5a6;
+}

@@ -1,4 +1,5 @@
 ﻿using dissertationProj.Models;
+using dissertationProj.Models.Ajax_Models;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using System;
@@ -23,14 +24,29 @@ namespace dissertationProj.Controllers
             ApplicationUserManager _userManager = HttpContext.Current.GetOwinContext().GetUserManager<ApplicationUserManager>();
             ApplicationUser user = _userManager.FindByName<ApplicationUser, string>(HttpContext.Current.User.Identity.Name);
 
-            List<Patient> records;
+            ApplicationDbContext _dbContext = new ApplicationDbContext();
 
-            using (var _dbContext = new ApplicationDbContext())
-            {
-                records = new List<Patient>(_dbContext.Patients.ToList());
-            }
+            List<PatientDoctorAjaxModel> records = new List<PatientDoctorAjaxModel>();
+            List<Patient> patients;
+           
+                patients = new List<Patient>(_dbContext.Patients.ToList());
 
-            return Json(records);
+                foreach(var patient in patients)
+                {
+                    var personnel = _dbContext.Users.FirstOrDefault(c => c.Id == patient.Id);
+                    PatientDoctorAjaxModel modelToAdd = new PatientDoctorAjaxModel()
+                    {
+                        patient = patient,
+                        personnel = personnel
+                    };
+
+                    records.Add(modelToAdd);
+                }
+
+                return Json(records);
+            
+
+            
         }
 
         [HttpGet]
@@ -38,18 +54,22 @@ namespace dissertationProj.Controllers
         {
 
             Patient patient;
+            PatientDoctorAjaxModel model = new PatientDoctorAjaxModel();
             using(var _dbContext = new ApplicationDbContext())
             {
                 patient = _dbContext.Patients.FirstOrDefault(c => c.patientId == patientId);
-                if(patient == null)
-                {
-                    patient = null;
-                }
+                model.patient = patient;
+
+                var personnel = _dbContext.Users.FirstOrDefault(c => c.Id == patient.Id);
+                model.personnel = personnel;
             }
 
-            return Json(patient);
+            return Json(model);
 
         }
+
+        
+        
 
         [HttpGet]
         public IHttpActionResult CheckPatientId(int patientId)
