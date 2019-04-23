@@ -17,10 +17,10 @@
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
-    <IISExpressSSLPort />
-    <IISExpressAnonymousAuthentication />
-    <IISExpressWindowsAuthentication />
-    <IISExpressUseClassicPipelineMode />
+    <IISExpressSSLPort>44338</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication>enabled</IISExpressAnonymousAuthentication>
+    <IISExpressWindowsAuthentication>disabled</IISExpressWindowsAuthentication>
+    <IISExpressUseClassicPipelineMode>false</IISExpressUseClassicPipelineMode>
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
@@ -193,6 +193,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min-default.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\main.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
@@ -213,13 +214,19 @@
     <Content Include="Pages\PatientInput.aspx" />
     <Content Include="Pages\patientOutput.aspx" />
     <Content Include="Pages\Scanner.aspx" />
+    <Content Include="Scripts\adapter-latest.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\capture.js" />
+    <Content Include="Scripts\ga.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
+    <Content Include="Scripts\main.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\WebForms\analytics.js" />
+    <Content Include="Scripts\WebForms\dataTables.responsive.min.js" />
     <Content Include="Scripts\WebForms\DetailsView.js" />
     <Content Include="Scripts\WebForms\Focus.js" />
     <Content Include="Scripts\WebForms\GridView.js" />
@@ -384,15 +391,12 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201904211249017_updatedd.cs" />
-    <Compile Include="Migrations\201904211249017_updatedd.Designer.cs">
-      <DependentUpon>201904211249017_updatedd.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201904211614188_testermigrat.cs" />
-    <Compile Include="Migrations\201904211614188_testermigrat.Designer.cs">
-      <DependentUpon>201904211614188_testermigrat.cs</DependentUpon>
+    <Compile Include="Migrations\201904221308476_update.cs" />
+    <Compile Include="Migrations\201904221308476_update.Designer.cs">
+      <DependentUpon>201904221308476_update.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Ajax Models\Doctor.cs" />
     <Compile Include="Models\Ajax Models\PatientDoctorAjaxModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ObstetricFactors.cs" />
@@ -400,6 +404,7 @@
     <Compile Include="Models\PreExistingFactors.cs" />
     <Compile Include="Models\Risk.cs" />
     <Compile Include="Models\TransientFactors.cs" />
+    <Compile Include="MyWebFormsFriendlyUrlResolver.cs" />
     <Compile Include="Pages\PatientInput.aspx.cs">
       <DependentUpon>PatientInput.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -461,11 +466,8 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201904211249017_updatedd.resx">
-      <DependentUpon>201904211249017_updatedd.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201904211614188_testermigrat.resx">
-      <DependentUpon>201904211614188_testermigrat.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201904221308476_update.resx">
+      <DependentUpon>201904221308476_update.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

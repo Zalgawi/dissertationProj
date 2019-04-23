@@ -86,8 +86,7 @@ namespace dissertationProj.Pages
 
         //GENERATE QRCODE
         private void GenerateCode(string patientIdString)
-        {
-            
+        {           
 
             var writer = new BarcodeWriter();
             writer.Format = BarcodeFormat.QR_CODE;

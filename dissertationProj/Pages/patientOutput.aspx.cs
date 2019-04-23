@@ -25,6 +25,10 @@ namespace dissertationProj.Pages
                 Populate_YearList();
                 Populate_MonthList2();
                 Populate_YearList2();
+
+                var id = Request.QueryString["id"];
+
+                patientIdHidden.Value = id;
             }
         }
 

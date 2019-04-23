@@ -430,29 +430,32 @@
     <script>
         $(document).ready(function () {
             var patientId = $('#<%= patientIdHidden.ClientID %>').val();
-            
+
             $.ajax({
                 type: "GET",
                 url: "/api/patients/GetPatient",
-                data: { id: patientId },
+                data: { patientId: patientId },
                 success: function (data) {
                     //alert("succeeded");
+
+                    alert(JSON.stringify(data));
+
                     $('#MainContent_outputPatientId').html(data.patient.patientId);
-                                      if (data.patient.patientId != "") {
+                    if (data.patient.patientId != "") {
                         patientId = data.patientId;
                     }
                     /**********************************************************************/
-                    $('#MainContent_outputFirstName').html(data.patient.firstName);
+                    $('#MainContent_outputFirstName').val(data.patient.firstName);
 
 
                     $('#MainContent_outputMiddleName').html(data.patient.middleName);
-                    $('#MainContent_outputLastName').html(data.patient.lastName);
-                    $('#MainContent_outputGender').html(data.patient.gender);
+                    $('#MainContent_outputLastName').val(data.patient.lastName);
+                    $('#MainContent_outputGender').val(data.patient.gender);
                     $('#MainContent_outputBirthdate').html(data.patient.birthdate);
-                    $('#MainContent_outputWeight').html(data.patient.weight);
-                    $('#MainContent_outputHeight').html(data.patient.height);
-                    $('#MainContent_outputCivilStatus').html(data.patient.civilStatus);
-                    $('#MainContent_outputDateOfAdmission').html(data.patient.dateOfAdmission);
+                    $('#MainContent_outputWeight').val(data.patient.weight);
+                    $('#MainContent_outputHeight').val(data.patient.height);
+                    $('#MainContent_outputCivilStatus').val(data.patient.civilStatus);
+                    $('#MainContent_outputDateOfAdmission').val(data.patient.dateOfAdmission);
                     /**********************************************************************/
                     $('#MainContent_outputParity').html(data.patient.parity);
                     RadionButtonSelectedValueSet('MainContent_outputPreviousVTE', data.patient.previousVTE);
@@ -489,14 +492,13 @@
                     RadionButtonSelectedValueSet('MainContent_outputCurrentSystemicInfection', data.patient.currentSystemicInfection);
                     RadionButtonSelectedValueSet('MainContent_outputImmobilityOrDehydration', data.patient.immobilityOrDehydration);
                     /**********************************************************************/
-                    
 
-                    var imageContainer = $('#imagesContainer');
-                    if (data.images != null)
-                    {
-                        data.images.forEach(function(image) {
-                            imageContainer.append('<p><img src="'+image.filePath+'"/></p><br/>')
-                                                 });
+
+                    var imageContainer = $('#patientQRCode');
+                    if (data.images != null) {
+                        data.images.forEach(function (image) {
+                            imageContainer.append('<p><img src="' + image.filePath + '"/></p><br/>')
+                        });
                     }
                 },
                 error: function (data) {
@@ -511,7 +513,9 @@
                     selectedInt = 1;
                 }
 
-                $('input[name="' + name+ '"][value="' + selectedInt + '"]').prop('Selected', true);
-            }
+                $('input[name="' + name + '"][value="' + selectedInt + '"]').prop('Selected', true);
+            };
+
+        });
             </script>
 </asp:Content>

@@ -10,14 +10,19 @@ using Microsoft.AspNet.Identity;
 
 namespace dissertationProj
 {
+
     public partial class SiteMaster : MasterPage
     {
+
+
         private const string AntiXsrfTokenKey = "__AntiXsrfToken";
         private const string AntiXsrfUserNameKey = "__AntiXsrfUserName";
         private string _antiXsrfTokenValue;
 
         protected void Page_Init(object sender, EventArgs e)
         {
+
+
             // The code below helps to protect against XSRF attacks
             var requestCookie = Request.Cookies[AntiXsrfTokenKey];
             Guid requestCookieGuidValue;
@@ -66,6 +71,7 @@ namespace dissertationProj
                 }
             }
         }
+
 
         protected void Page_Load(object sender, EventArgs e)
         {

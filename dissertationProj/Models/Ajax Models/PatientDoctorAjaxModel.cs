@@ -9,7 +9,7 @@ namespace dissertationProj.Models.Ajax_Models
     {
 
         public Patient patient { get; set; }
-        public ApplicationUser personnel { get; set; }
+        public Doctor personnel { get; set; }
 
         public PatientDoctorAjaxModel()
         {

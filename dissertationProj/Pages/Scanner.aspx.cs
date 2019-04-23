@@ -15,6 +15,8 @@ namespace dissertationProj.Pages
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            //MediaStreamTrack.getSources(gotSources);
+
             if (!Page.User.Identity.IsAuthenticated)
             {
 

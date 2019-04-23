@@ -34,10 +34,16 @@ namespace dissertationProj.Controllers
                 foreach(var patient in patients)
                 {
                     var personnel = _dbContext.Users.FirstOrDefault(c => c.Id == patient.Id);
-                    PatientDoctorAjaxModel modelToAdd = new PatientDoctorAjaxModel()
+                Doctor newDoctor = new Doctor();
+                newDoctor.firstName = personnel.firstName;
+                newDoctor.secondName = personnel.secondName;
+                newDoctor.lastName = personnel.lastName;
+                newDoctor.Id = personnel.Id;
+
+                PatientDoctorAjaxModel modelToAdd = new PatientDoctorAjaxModel()
                     {
                         patient = patient,
-                        personnel = personnel
+                        personnel = newDoctor
                     };
 
                     records.Add(modelToAdd);
@@ -53,16 +59,24 @@ namespace dissertationProj.Controllers
         public IHttpActionResult GetPatient(int patientId)
         {
 
+            var _dbContext = new ApplicationDbContext();
+
             Patient patient;
             PatientDoctorAjaxModel model = new PatientDoctorAjaxModel();
-            using(var _dbContext = new ApplicationDbContext())
-            {
+           
                 patient = _dbContext.Patients.FirstOrDefault(c => c.patientId == patientId);
                 model.patient = patient;
 
                 var personnel = _dbContext.Users.FirstOrDefault(c => c.Id == patient.Id);
-                model.personnel = personnel;
-            }
+                Doctor newDoctor = new Doctor();
+                newDoctor.firstName = personnel.firstName;
+                newDoctor.secondName = personnel.secondName;
+                newDoctor.lastName = personnel.lastName;
+                newDoctor.Id = personnel.Id;
+
+                model.personnel = newDoctor;
+
+            
 
             return Json(model);
 
