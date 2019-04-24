@@ -21,32 +21,8 @@
     <link rel="icon" sizes="192x192" href="../../../images/webrtc-icon-192x192.png">
     <link href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet" type="text/css">--%>
 
-    <style>
-        div.select {
-            display: inline-block;
-            margin: 0 0 1em 0;
-        }
 
-        p.small {
-            font-size: 0.7em;
-        }
 
-        label {
-            width: 12em;
-            display: inline-block;
-        }
-    </style>
-
-    <script>
-const constraints = {
-  video: true
-};
-
-const video = document.querySelector('video');
-
-navigator.mediaDevices.getUserMedia(constraints).
-  then((stream) => {video.srcObject = stream});
-</script>
 
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -97,7 +73,7 @@ gtag('js', new Date());
             <br />
 
              <div class="camera">
-                <video id="video">Video stream not available.</video>
+                <video id="video" autoplay>Video stream not available.</video>
                 <button id="startbutton">Take photo</button>
             </div>
             <br />
@@ -143,6 +119,21 @@ gtag('js', new Date());
     <script type="text/javascript">
         $(document).ready(function () {
             //alert("Feed page");
+            $('#video').attr('playsinline', ''); 
+
+
+
+            videoElement = document.querySelector('video');
+
+            videoSelect = document.querySelector('select#videoSource');
+
+            navigator.mediaDevices.enumerateDevices()
+                .then(gotDevices).then(getStream).catch(handleError);
+
+
+            videoSelect.onchange = getStream;
+
+
             $('#patientsTable').DataTable({
                 responsive: true,
                 ajax: {

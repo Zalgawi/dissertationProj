@@ -87,6 +87,25 @@
             context.drawImage(video, 0, 0, width, height);
 
             var data = canvas.toDataURL('image/png');
+            
+            $.ajax({
+                type: "POST",
+                url: "/api/patients/ScanPatient",
+                data: data.toString(),
+                
+                contentType: "application/json",
+                success: function (data) {
+                    if (!data.redirect) {
+                        alert("error: " + data.error.toString());
+                        return;
+                    } else {
+                        window.location.href = data.redirectURL.toString();
+                    }
+                }
+            });
+
+            
+
             photo.setAttribute('src', data);
         } else {
             clearphoto();

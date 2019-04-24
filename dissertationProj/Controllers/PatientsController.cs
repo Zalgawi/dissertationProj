@@ -4,11 +4,15 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.Http;
+using ZXing;
 
 namespace dissertationProj.Controllers
 {
@@ -104,6 +108,56 @@ namespace dissertationProj.Controllers
 
             return Json(validId);
 
+        }
+
+        [HttpPost]
+        public IHttpActionResult ScanPatient(HttpRequestMessage dataURI)
+        {
+            
+
+
+            
+            string stringName = dataURI.Content.ReadAsStringAsync().Result;
+
+            var base64Data = Regex.Match(stringName, @"data:image/(?<type>.+?),(?<data>.+)").Groups["data"].Value;
+            var binData = Convert.FromBase64String(base64Data);
+            var reader = new BarcodeReader { AutoRotate = true, };
+
+            MemoryStream imageStream = new MemoryStream(binData);
+
+
+            //Detatch and decode the barcode inside the bitmap
+            try
+            {
+                var imageBitmap = new Bitmap(imageStream);
+
+                var result = reader.Decode(imageBitmap);
+                if (result != null)
+                {
+                    var patientIdString = result.ToString();
+
+                    
+
+                    string url = "PatientOutput?id=" + patientIdString;
+
+                    return Json(new { redirect = true, redirectURL = url, error = "" });
+                }
+                else
+                {
+                    return Json(new { redirect = false, redirectURL = "", error = "Null result from ZXing decoding Bitmap of imageStream" });
+                }
+            }
+            catch (Exception e)
+            {
+                return Json(new { redirect=false, redirectURL = "", error = e.ToString() });
+            }
+
+
+
+
+
+
+            
         }
 
     }

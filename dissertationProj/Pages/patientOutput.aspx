@@ -438,7 +438,7 @@
                 success: function (data) {
                     //alert("succeeded");
 
-                    alert(JSON.stringify(data));
+                    
 
                     $('#MainContent_outputPatientId').html(data.patient.patientId);
                     if (data.patient.patientId != "") {
