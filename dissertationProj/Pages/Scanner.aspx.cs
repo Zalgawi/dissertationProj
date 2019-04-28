@@ -25,23 +25,23 @@ namespace dissertationProj.Pages
             }
         }
 
-        protected void patientQRScanner_Click(object sender, EventArgs e)
+        //protected void patientQRScanner_Click(object sender, EventArgs e)
             
-        {
-            ReadQRCode();
-        }
+        //{
+        //    ReadQRCode();
+        //}
         
         //READ CODE FROM QR IMAGE
-        private void ReadQRCode()
-        {
-            var reader = new BarcodeReader();
-            string filename = Path.Combine(Request.MapPath("~/images/"), "QRImage.jpg");
-            //Detatch and decode the barcode inside the bitmap
-            var result = reader.Decode(new Bitmap(filename));
-            if (result != null)
-            {
-                lblQRCode.Text = "QR Code : " + result.Text;
-            }
-        }
+        //private void ReadQRCode()
+        //{
+        //    var reader = new BarcodeReader();
+        //    string filename = Path.Combine(Request.MapPath("~/images/"), "QRImage.jpg");
+        //    //Detatch and decode the barcode inside the bitmap
+        //    var result = reader.Decode(new Bitmap(filename));
+        //    if (result != null)
+        //    {
+        //        lblQRCode.Text = "QR Code : " + result.Text;
+        //    }
+        //}
     }
 }

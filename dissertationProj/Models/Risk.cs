@@ -13,6 +13,7 @@ namespace dissertationProj.Models
         public string riskName { get; set; }
         public int riskValue { get; set; }
         public bool riskSelected { get; set; }
+        
 
         public Risk(string name, int value)
         {

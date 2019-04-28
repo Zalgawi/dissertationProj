@@ -66,9 +66,11 @@ namespace dissertationProj.Controllers
             var _dbContext = new ApplicationDbContext();
 
             Patient patient;
+
             PatientDoctorAjaxModel model = new PatientDoctorAjaxModel();
            
                 patient = _dbContext.Patients.FirstOrDefault(c => c.patientId == patientId);
+                patient.calculatePatientScore();
                 model.patient = patient;
 
                 var personnel = _dbContext.Users.FirstOrDefault(c => c.Id == patient.Id);
@@ -87,7 +89,7 @@ namespace dissertationProj.Controllers
         }
 
         
-        
+
 
         [HttpGet]
         public IHttpActionResult CheckPatientId(int patientId)

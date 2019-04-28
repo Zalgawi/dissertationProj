@@ -166,85 +166,13 @@ namespace dissertationProj.Pages {
         protected global::System.Web.UI.WebControls.RadioButtonList inputHighRiskThrombophilia;
         
         /// <summary>
-        /// inputCancer control.
+        /// inputMedicalComorbidities control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList inputCancer;
-        
-        /// <summary>
-        /// inputHeartFailure control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList inputHeartFailure;
-        
-        /// <summary>
-        /// inputActiveSystemicLupusErythematosus control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList inputActiveSystemicLupusErythematosus;
-        
-        /// <summary>
-        /// inputInflammatoryPolyarthropathy control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList inputInflammatoryPolyarthropathy;
-        
-        /// <summary>
-        /// inputInflammatoryBowelDisease control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList inputInflammatoryBowelDisease;
-        
-        /// <summary>
-        /// inputNephroticSyndrome control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList inputNephroticSyndrome;
-        
-        /// <summary>
-        /// inputTypeIDiabetesMellitusWithNephropathy control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList inputTypeIDiabetesMellitusWithNephropathy;
-        
-        /// <summary>
-        /// inputSickleCellDisease control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList inputSickleCellDisease;
-        
-        /// <summary>
-        /// inputCurrentIntravenousDrugUser control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList inputCurrentIntravenousDrugUser;
+        protected global::System.Web.UI.WebControls.RadioButtonList inputMedicalComorbidities;
         
         /// <summary>
         /// inputFamilyHistoryVTEFirstDegreeRelative control.

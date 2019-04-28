@@ -17,7 +17,11 @@ namespace dissertationProj.Models
         public int patientId { get; set; }
 
       //  [ForeignKey("ApplicationUser")]
+        //ID of doctor that created patient record.
         public string Id { get; set; }
+
+        //ID of doctor that last edited patient record.
+        public string lastEditedId { get; set; }
       //  public virtual ApplicationUser ApplicationUser { get; set; }
 
         /*  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -44,7 +48,10 @@ namespace dissertationProj.Models
 
         public decimal bmi { get; set; }
 
+        public int noOfPregnancies { get; set; }
+
         public DateTime ?dateOfAdmission { get; set; }
+        public DateTime ?dateOfLastEdit { get; set; }
 
         
 
@@ -120,6 +127,37 @@ namespace dissertationProj.Models
             }
             
 
+        }
+
+        //Calculates bmi and total risk score. Prevents repeating same code multiple times.
+        public void calculatePatientScore()
+        {
+
+            this.riskAssessmentScore = 0;
+            this.riskAssessmentScore += this.preExistingFactors.AllRisks().Where(c => c.riskSelected == true).Sum(c => c.riskValue);
+
+            var today = DateTime.Today;
+            // Calculate the age.
+            var age = today.Year - this.birthdate.Value.Year;
+            // Go back to the year the person was born in case of a leap year
+            if (this.birthdate > today.AddYears(-age)) age--;
+
+
+            if (age > 35)
+            {
+                this.riskAssessmentScore += 1;
+            }
+
+            this.bmiCalculator();
+
+            if (this.bmi > 40)
+            {
+                this.riskAssessmentScore += 2;
+            }
+            else if (this.bmi > 30)
+            {
+                this.riskAssessmentScore += 1;
+            }
         }
 
     }

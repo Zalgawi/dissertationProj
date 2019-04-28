@@ -22,6 +22,15 @@ namespace dissertationProj.Pages {
         protected global::System.Web.UI.WebControls.TextBox outputFirstName;
         
         /// <summary>
+        /// patientQRCode control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image patientQRCode;
+        
+        /// <summary>
         /// outputMiddleName control.
         /// </summary>
         /// <remarks>
@@ -58,31 +67,13 @@ namespace dissertationProj.Pages {
         protected global::System.Web.UI.WebControls.DropDownList outputCivilStatus;
         
         /// <summary>
-        /// drpCalMonth control.
+        /// outputParity control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList drpCalMonth;
-        
-        /// <summary>
-        /// drpCalYear control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList drpCalYear;
-        
-        /// <summary>
-        /// outputBirthDate control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Calendar outputBirthDate;
+        protected global::System.Web.UI.WebControls.TextBox outputParity;
         
         /// <summary>
         /// outputWeight control.
@@ -101,42 +92,6 @@ namespace dissertationProj.Pages {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox outputHeight;
-        
-        /// <summary>
-        /// drpCalMonth2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList drpCalMonth2;
-        
-        /// <summary>
-        /// drpCalYear2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList drpCalYear2;
-        
-        /// <summary>
-        /// outputDateOfAdmission control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Calendar outputDateOfAdmission;
-        
-        /// <summary>
-        /// outputParity control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox outputParity;
         
         /// <summary>
         /// outputPreviousVTE control.
@@ -166,85 +121,13 @@ namespace dissertationProj.Pages {
         protected global::System.Web.UI.WebControls.RadioButtonList outputHighRiskThrombophilia;
         
         /// <summary>
-        /// outputCancer control.
+        /// outputMedicalComorbidities control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList outputCancer;
-        
-        /// <summary>
-        /// outputHeartFailure control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList outputHeartFailure;
-        
-        /// <summary>
-        /// outputActiveSystemicLupusErythematosus control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList outputActiveSystemicLupusErythematosus;
-        
-        /// <summary>
-        /// outputInflammatoryPolyarthropathy control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList outputInflammatoryPolyarthropathy;
-        
-        /// <summary>
-        /// outputInflammatoryBowelDisease control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList outputInflammatoryBowelDisease;
-        
-        /// <summary>
-        /// outputNephroticSyndrome control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList outputNephroticSyndrome;
-        
-        /// <summary>
-        /// outputTypeIDiabetesMellitusWithNephropathy control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList outputTypeIDiabetesMellitusWithNephropathy;
-        
-        /// <summary>
-        /// outputSickleCellDisease control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList outputSickleCellDisease;
-        
-        /// <summary>
-        /// outputCurrentIntravenousDrugUser control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList outputCurrentIntravenousDrugUser;
+        protected global::System.Web.UI.WebControls.RadioButtonList outputMedicalComorbidities;
         
         /// <summary>
         /// outputFamilyHistoryVTEFirstDegreeRelative control.
@@ -425,15 +308,6 @@ namespace dissertationProj.Pages {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button formSubmitBtn;
-        
-        /// <summary>
-        /// patientQRCode control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Image patientQRCode;
         
         /// <summary>
         /// patientIdHidden control.

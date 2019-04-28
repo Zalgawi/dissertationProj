@@ -96,7 +96,7 @@
                 contentType: "application/json",
                 success: function (data) {
                     if (!data.redirect) {
-                        alert("error: " + data.error.toString());
+                        document.getElementById("cameraRetakeError").style.visibility = "visible";
                         return;
                     } else {
                         window.location.href = data.redirectURL.toString();

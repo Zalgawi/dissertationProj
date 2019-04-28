@@ -20,24 +20,30 @@ namespace dissertationProj.Models
         public Risk surgeryVTE { get; set; }
         //  yes = 3 | no = 0
         public Risk highRiskThrombophilia { get; set; }
+
+
+
         //  yes = 3 | no = 0
-        public Risk cancer { get; set; }
-        //  yes = 3 | no = 0
-        public Risk heartFailure { get; set; }
-        //  yes = 3 | no = 0
-        public Risk activeSystemicLupusErythematosus { get; set; }
-        //  yes = 3 | no = 0
-        public Risk inflammatoryPolyarthropathy { get; set; }
-        //  yes = 3 | no = 0
-        public Risk inflammatoryBowelDisease { get; set; }
-        //  yes = 3 | no = 0
-        public Risk nephroticSyndrome { get; set; }
-        //  yes = 3 | no = 0
-        public Risk typeIDiabetesMellitusWithNephropathy { get; set; }
-        //  yes = 3 | no = 0
-        public Risk sickleCellDisease { get; set; }
-        //  yes = 3 | no = 0
-        public Risk currentIntravenousDrugUser { get; set; }
+        public Risk medicalComorbities { get; set; }
+
+
+        //public Risk cancer { get; set; }
+        ////  yes = 3 | no = 0
+        //public Risk heartFailure { get; set; }
+        ////  yes = 3 | no = 0
+        //public Risk activeSystemicLupusErythematosus { get; set; }
+        ////  yes = 3 | no = 0
+        //public Risk inflammatoryPolyarthropathy { get; set; }
+        ////  yes = 3 | no = 0
+        //public Risk inflammatoryBowelDisease { get; set; }
+        ////  yes = 3 | no = 0
+        //public Risk nephroticSyndrome { get; set; }
+        ////  yes = 3 | no = 0
+        //public Risk typeIDiabetesMellitusWithNephropathy { get; set; }
+        ////  yes = 3 | no = 0
+        //public Risk sickleCellDisease { get; set; }
+        ////  yes = 3 | no = 0
+        //public Risk currentIntravenousDrugUser { get; set; }
         // Family history of unprovoked / estrogen-related VTE in first-degree relative? yes = 1 | no = 0
         public Risk familyHistoryVTEFirstDegreeRelative { get; set; }
         //  yes = 1 | no = 0
@@ -62,15 +68,7 @@ namespace dissertationProj.Models
             
             surgeryVTE = new Risk("surgeryVTE", 3);
             highRiskThrombophilia = new Risk("highRiskThrombophilia", 3);
-            cancer = new Risk("cancer", 3);
-            heartFailure = new Risk("heartFailure", 3);
-            activeSystemicLupusErythematosus = new Risk("activeSystemicLupusErythematosus", 3);
-            inflammatoryPolyarthropathy = new Risk("inflammatoryPolyarthropathy", 3);
-            inflammatoryBowelDisease = new Risk("inflammatoryBowelDisease", 3);
-            nephroticSyndrome = new Risk("nephroticSyndrome", 3);
-            typeIDiabetesMellitusWithNephropathy = new Risk("typeIDiabetesMellitusWithNephropathy", 3);
-            sickleCellDisease = new Risk("sickleCellDisease", 3);
-            currentIntravenousDrugUser = new Risk("currentIntravenousDrugUser", 3);
+            medicalComorbities = new Risk("medicalComorbities", 3);
             familyHistoryVTEFirstDegreeRelative = new Risk("familyHistoryVTEFirstDegreeRelative", 1);
             lowRiskThrombophilia = new Risk("lowRiskThrombophilia", 1);
             smoker = new Risk("smoker", 1);
@@ -85,15 +83,8 @@ namespace dissertationProj.Models
             allRisks.Add(previousVTE);
             allRisks.Add(surgeryVTE);
             allRisks.Add(highRiskThrombophilia);
-            allRisks.Add(cancer);
-            allRisks.Add(heartFailure);
-            allRisks.Add(activeSystemicLupusErythematosus);
-            allRisks.Add(inflammatoryPolyarthropathy);
-            allRisks.Add(inflammatoryBowelDisease);
-            allRisks.Add(nephroticSyndrome);
-            allRisks.Add(typeIDiabetesMellitusWithNephropathy);
-            allRisks.Add(sickleCellDisease);
-            allRisks.Add(currentIntravenousDrugUser);
+            allRisks.Add(medicalComorbities);
+            
             allRisks.Add(familyHistoryVTEFirstDegreeRelative);
             allRisks.Add(lowRiskThrombophilia);
             allRisks.Add(smoker);

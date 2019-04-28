@@ -21,64 +21,60 @@ namespace dissertationProj.Pages
         {
             if (!IsPostBack)
             {
-                Populate_MonthList();
-                Populate_YearList();
-                Populate_MonthList2();
-                Populate_YearList2();
+                //Populate_MonthList();
+                //Populate_YearList();
+                
 
                 var id = Request.QueryString["id"];
 
                 patientIdHidden.Value = id;
             }
-        }
-
-        protected void Populate_MonthList()
-        {
-            //Add each month to the list
-            var dtf = System.Globalization.CultureInfo.CurrentCulture.DateTimeFormat;
-            for (int i = 1; i <= 12; i++)
-                drpCalMonth.Items.Add(new ListItem(dtf.GetMonthName(i), i.ToString()));
-
-            //Make the current month selected item in the list
-            drpCalMonth.Items.FindByValue(DateTime.Now.Month.ToString()).Selected = true;
-        }
-        protected void Populate_MonthList2()
-        {
-            //Add each month to the list
-            var dtf = System.Globalization.CultureInfo.CurrentCulture.DateTimeFormat;
-            for (int i = 1; i <= 12; i++)
-                drpCalMonth2.Items.Add(new ListItem(dtf.GetMonthName(i), i.ToString()));
-
-            //Make the current month selected item in the list
-            drpCalMonth2.Items.FindByValue(DateTime.Now.Month.ToString()).Selected = true;
-        }
-
-
-        protected void Populate_YearList()
-        {
-            //Year list can be changed by changing the lower and upper 
-            //limits of the For statement    
-            for (int intYear = DateTime.Now.Year - 70; intYear <= DateTime.Now.Year; intYear++)
+            if (!Page.User.Identity.IsAuthenticated)
             {
-                drpCalYear.Items.Add(intYear.ToString());
-            }
+                string strCurrentUserId = User.Identity.GetUserId();
+                Response.Redirect("/Account/Login", true);
 
-            //Make the current year selected item in the list
-            drpCalYear.Items.FindByValue(DateTime.Now.Year.ToString()).Selected = true;
+            }
         }
 
-        protected void Populate_YearList2()
-        {
-            //Year list can be changed by changing the lower and upper 
-            //limits of the For statement    
-            for (int intYear = DateTime.Now.Year - 70; intYear <= DateTime.Now.Year + 20; intYear++)
-            {
-                drpCalYear2.Items.Add(intYear.ToString());
-            }
+ 
+        //protected void Populate_MonthList2()
+        //{
+        //    Add each month to the list
+        //    var dtf = System.Globalization.CultureInfo.CurrentCulture.DateTimeFormat;
+        //    for (int i = 1; i <= 12; i++)
+        //        drpCalMonth2.Items.Add(new ListItem(dtf.GetMonthName(i), i.ToString()));
 
-            //Make the current year selected item in the list
-            drpCalYear2.Items.FindByValue(DateTime.Now.Year.ToString()).Selected = true;
-        }
+        //    Make the current month selected item in the list
+        //    drpCalMonth2.Items.FindByValue(DateTime.Now.Month.ToString()).Selected = true;
+        //}
+
+
+        //protected void Populate_YearList()
+        //{
+        //    //Year list can be changed by changing the lower and upper 
+        //    //limits of the For statement    
+        //    for (int intYear = DateTime.Now.Year - 70; intYear <= DateTime.Now.Year; intYear++)
+        //    {
+        //        drpCalYear.Items.Add(intYear.ToString());
+        //    }
+
+        //    //Make the current year selected item in the list
+        //    drpCalYear.Items.FindByValue(DateTime.Now.Year.ToString()).Selected = true;
+        //}
+
+        //protected void Populate_YearList2()
+        //{
+        //    //Year list can be changed by changing the lower and upper 
+        //    //limits of the For statement    
+        //    for (int intYear = DateTime.Now.Year - 70; intYear <= DateTime.Now.Year + 20; intYear++)
+        //    {
+        //        drpCalYear2.Items.Add(intYear.ToString());
+        //    }
+
+        //    //Make the current year selected item in the list
+        //    drpCalYear2.Items.FindByValue(DateTime.Now.Year.ToString()).Selected = true;
+        //}
         
         
         //READ CODE FROM QR IMAGE
@@ -91,38 +87,51 @@ namespace dissertationProj.Pages
             var result = reader.Decode(new Bitmap(filename));
             if (result != null)
             {
+                patientQRCode.Visible = true;
+                patientQRCode.ImageUrl = "~/images/" + patientIdString + ".jpg";
                 //lblQRCode.Text = "QR Code : " + result.Text;
             }
-            patientQRCode.Visible = true;
-            patientQRCode.ImageUrl = "~/images/" + patientIdString + ".jpg";
+            
+
         }
 
        
 
 
-        protected void Save_Patient(int patientId)
+        protected void Save_Patient(object sender, EventArgs e)
         {
-            var _dbContext = new ApplicationDbContext();
+            var User = System.Web.HttpContext.Current.User.Identity.GetUserId();
 
-            var patient = _dbContext.Patients.FirstOrDefault(c => c.patientId == patientId);
+            var _dbContext = new ApplicationDbContext();
+            var patientIdInt = Int32.Parse(patientIdHidden.Value);
+            var patient = _dbContext.Patients.FirstOrDefault(c => c.patientId == patientIdInt);
+
+
+            patient.firstName = outputFirstName.Text;
+            patient.middleName = outputMiddleName.Text;
+            patient.lastName = outputLastName.Text;
+            patient.gender = outputGender.SelectedValue;
+            //patient.birthdate = DateTime.Parse(outputBirthDate.SelectedDate.ToString());
+            //birthdate = DateTime.TryParse(inputBirthDate.ToString(), "dd/MM/yyyy", CultureInfo.InvariantCulture),
+            patient.weight = Decimal.Parse(outputWeight.Text);
+            patient.height = Decimal.Parse(outputHeight.Text);
+            patient.civilStatus = outputCivilStatus.SelectedValue;
+
+            DateTime currentDateTime = DateTime.Now;
+
+            patient.dateOfLastEdit = currentDateTime;
+            patient.lastEditedId = User;
 
             //PRE-EXISTING-RISK-FACTORS
             patient.preExistingFactors.previousVTE.riskSelected = Convert.ToBoolean(Int32.Parse(outputPreviousVTE.SelectedValue));
             patient.preExistingFactors.surgeryVTE.riskSelected = Convert.ToBoolean(Int32.Parse(outputSurgeryVTE.SelectedValue));
             patient.preExistingFactors.highRiskThrombophilia.riskSelected = Convert.ToBoolean(Int32.Parse(outputHighRiskThrombophilia.SelectedValue));
-            patient.preExistingFactors.cancer.riskSelected = Convert.ToBoolean(Int32.Parse(outputCancer.SelectedValue));
-            patient.preExistingFactors.heartFailure.riskSelected = Convert.ToBoolean(Int32.Parse(outputHeartFailure.SelectedValue));
-            patient.preExistingFactors.activeSystemicLupusErythematosus.riskSelected = Convert.ToBoolean(Int32.Parse(outputActiveSystemicLupusErythematosus.SelectedValue));
-            patient.preExistingFactors.inflammatoryPolyarthropathy.riskSelected = Convert.ToBoolean(Int32.Parse(outputInflammatoryPolyarthropathy.SelectedValue));
-            patient.preExistingFactors.inflammatoryBowelDisease.riskSelected = Convert.ToBoolean(Int32.Parse(outputInflammatoryBowelDisease.SelectedValue));
-            patient.preExistingFactors.nephroticSyndrome.riskSelected = Convert.ToBoolean(Int32.Parse(outputNephroticSyndrome.SelectedValue));
-            patient.preExistingFactors.typeIDiabetesMellitusWithNephropathy.riskSelected = Convert.ToBoolean(Int32.Parse(outputTypeIDiabetesMellitusWithNephropathy.SelectedValue));
-            patient.preExistingFactors.sickleCellDisease.riskSelected = Convert.ToBoolean(Int32.Parse(outputSickleCellDisease.SelectedValue));
-            patient.preExistingFactors.currentIntravenousDrugUser.riskSelected = Convert.ToBoolean(Int32.Parse(outputCurrentIntravenousDrugUser.SelectedValue));
+            patient.preExistingFactors.medicalComorbities.riskSelected = Convert.ToBoolean(Int32.Parse(outputMedicalComorbidities.SelectedValue));
             patient.preExistingFactors.familyHistoryVTEFirstDegreeRelative.riskSelected = Convert.ToBoolean(Int32.Parse(outputFamilyHistoryVTEFirstDegreeRelative.SelectedValue));
             patient.preExistingFactors.lowRiskThrombophilia.riskSelected = Convert.ToBoolean(Int32.Parse(outputLowRiskThrombophilia.SelectedValue));
             patient.preExistingFactors.smoker.riskSelected = Convert.ToBoolean(Int32.Parse(outputSmoker.SelectedValue));
             patient.preExistingFactors.grossVaricoseVeins.riskSelected = Convert.ToBoolean(Int32.Parse(outputGrossVaricoseVeins.SelectedValue));
+            patient.noOfPregnancies = Int32.Parse(outputParity.Text);
 
             //OBSTETRIC-RISK-FACTORS
             patient.ObstetricFactors.preEclampsiaInCurrentPregnancy.riskSelected = Convert.ToBoolean(Int32.Parse(outputPreEclampsiaInCurrentPregnancy.SelectedValue));
@@ -152,47 +161,42 @@ namespace dissertationProj.Pages
                 patient.preExistingFactors.parity.riskSelected = false;
             }
 
-            patient.riskAssessmentScore += patient.preExistingFactors.AllRisks().Where(c => c.riskSelected == true).Sum(c => c.riskValue);
+            patient.calculatePatientScore();
 
-            var today = DateTime.Today;
-            // Calculate the age.
-            var age = today.Year - patient.birthdate.Value.Year;
-            // Go back to the year the person was born in case of a leap year
-            if (patient.birthdate > today.AddYears(-age)) age--;
+            //patient.riskAssessmentScore += patient.preExistingFactors.AllRisks().Where(c => c.riskSelected == true).Sum(c => c.riskValue);
+
+            //var today = DateTime.Today;
+            //// Calculate the age.
+            //var age = today.Year - patient.birthdate.Value.Year;
+            //// Go back to the year the person was born in case of a leap year
+            //if (patient.birthdate > today.AddYears(-age)) age--;
 
 
-            if (age > 35)
-            {
-                patient.riskAssessmentScore += 1;
-            }
+            //if (age > 35)
+            //{
+            //    patient.riskAssessmentScore += 1;
+            //}
 
-            patient.bmiCalculator();
+            //patient.bmiCalculator();
 
-            if (patient.bmi > 40)
-            {
-                patient.riskAssessmentScore += 2;
-            }
-            else if (patient.bmi > 30)
-            {
-                patient.riskAssessmentScore += 1;
-            }
+            //if (patient.bmi > 40)
+            //{
+            //    patient.riskAssessmentScore += 2;
+            //}
+            //else if (patient.bmi > 30)
+            //{
+            //    patient.riskAssessmentScore += 1;
+            //}
 
             
-                patient = _dbContext.Patients.Add(patient);
+                
                 _dbContext.SaveChanges();
             
 
 
             //Display success message and clear the form.
-            System.Windows.Forms.MessageBox.Show("You have successfully submitted a patient!");
-            outputFirstName.Text = "";
-            outputMiddleName.Text = "";
-            outputLastName.Text = "";
-            outputGender.SelectedValue = "Select Gender";
-            //inputBirthDate.SelectedDate = ;
-            outputWeight.Text = "";
-            outputHeight.Text = "";
-            //inputDateOfAdmission.Text = "";
+            System.Windows.Forms.MessageBox.Show("You have successfully updated patient!");
+
 
         }
 
@@ -221,44 +225,18 @@ namespace dissertationProj.Pages
             }
 
 
-            /*
-
-       if (riskAssessmentScore >= 4)
-       {
-           display: If total score ≥ 4 antenatally, consider thromboprophylaxis from the first trimester.
-       }
-       else (riskAssessmentScore == 3)
-       {
-           display: If total score 3 antenatally, consider thromboprophylaxis from 28 weeks.
-       }
-       else (riskAssessmentScore >= 2)
-       {
-           display: If total score ≥ 2 postnatally, consider thromboprophylaxis for at least 10 days.
-       }
-       else ()
-
-      */
-
-
-            //If admitted to hospital antenatally consider thromboprophylaxis.
-
-            //If prolonged admission (≥ 3 days) or readmission to hospital within the puerperium consider thromboprophylaxis.
-
-            //For patients with an identified bleeding risk, the balance of risks of bleeding and thrombosis should be discussed
-            //in consultation with a haematologist with expertise in thrombosis and bleeding in pregnancy.
-
         }
-        protected void Set_Calendar(object Sender, EventArgs e)
-        {
-            int year = int.Parse(drpCalYear.SelectedValue);
-            int month = int.Parse(drpCalMonth.SelectedValue);
-            outputBirthDate.TodaysDate = new DateTime(year, month, 1);
-        }
-        protected void Set_Calendar2(object Sender, EventArgs e)
-        {
-            int year = int.Parse(drpCalYear2.SelectedValue);
-            int month = int.Parse(drpCalMonth2.SelectedValue);
-            outputDateOfAdmission.TodaysDate = new DateTime(year, month, 1);
-        }
+        //protected void Set_Calendar(object Sender, EventArgs e)
+        //{
+        //    int year = int.Parse(drpCalYear.SelectedValue);
+        //    int month = int.Parse(drpCalMonth.SelectedValue);
+        //    outputBirthDate.TodaysDate = new DateTime(year, month, 1);
+        //}
+        //protected void Set_Calendar2(object Sender, EventArgs e)
+        //{
+        //    int year = int.Parse(drpCalYear2.SelectedValue);
+        //    int month = int.Parse(drpCalMonth2.SelectedValue);
+        //    outputDateOfAdmission.TodaysDate = new DateTime(year, month, 1);
+        //}
     }
 }

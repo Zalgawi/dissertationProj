@@ -22,24 +22,6 @@ namespace dissertationProj.Pages {
         protected global::System.Web.UI.WebControls.Button patientLookup;
         
         /// <summary>
-        /// patientQRScanner control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button patientQRScanner;
-        
-        /// <summary>
-        /// lblQRCode control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblQRCode;
-        
-        /// <summary>
         /// patientIdHidden control.
         /// </summary>
         /// <remarks>

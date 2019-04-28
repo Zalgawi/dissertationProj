@@ -151,114 +151,59 @@
             
             <tr>
                 <!--previousVTE-->
-                <td><label class="control-label">Previous VTE</label></td>
+                <td><label class="control-label">Previous VTE (except a single event related to major surgery)</label></td>
                 <td><asp:RadioButtonList class="form-check-input" ID="inputPreviousVTE" runat="server">
-              <asp:ListItem Value="1">Yes</asp:ListItem>
-              <asp:ListItem Value="0" Selected="True">No</asp:ListItem>
+              <asp:ListItem Value="1">Yes (+4)</asp:ListItem>
+              <asp:ListItem Value="0" Selected="True">No (+0)</asp:ListItem>
           </asp:RadioButtonList></td>
                 <!--surgeryVTE-->
-                <td><label class=" control-label">Surgery Caused VTE</label></td>
+                <td><label class=" control-label">Previous VTE provoked by major surgery </label></td>
                 <td><asp:RadioButtonList class="form-check-input" ID="inputSurgeryVTE" runat="server">
-              <asp:ListItem Value="1">Yes</asp:ListItem>
-              <asp:ListItem Value="0" Selected="True">No</asp:ListItem>
+              <asp:ListItem Value="1">Yes (+3)</asp:ListItem>
+              <asp:ListItem Value="0" Selected="True">No (+0)</asp:ListItem>
           </asp:RadioButtonList></td>
             </tr>
             <tr>
                 <!--highRiskThrombophilia-->
-                <td><label class="control-label">High Risk Thrombophilia</label></td>
+                <td><label class="control-label">Known high-risk thrombophilia</label></td>
                 <td><asp:RadioButtonList class="form-check-input" ID="inputHighRiskThrombophilia" runat="server">
-              <asp:ListItem Value="1">Yes</asp:ListItem>
-              <asp:ListItem Value="0" Selected="True">No</asp:ListItem>
+              <asp:ListItem Value="1">Yes (+3)</asp:ListItem>
+              <asp:ListItem Value="0" Selected="True">No (+0)</asp:ListItem>
           </asp:RadioButtonList></td>
-                <!--cancer-->
-                <td><label class=" control-label">Cancer</label></td>
-                <td><asp:RadioButtonList class="form-check-input" ID="inputCancer" runat="server">
-              <asp:ListItem Value="1">Yes</asp:ListItem>
-              <asp:ListItem Value="0" Selected="True">No</asp:ListItem>
-          </asp:RadioButtonList></td>
-            </tr>
-            <tr>
-                <!--heartFailure-->
-                <td><label class="control-label">Heart Failure</label></td>
-                <td><asp:RadioButtonList class="form-check-input" ID="inputHeartFailure" runat="server">
-              <asp:ListItem Value="1">Yes</asp:ListItem>
-              <asp:ListItem Value="0" Selected="True">No</asp:ListItem>
-          </asp:RadioButtonList></td>
-                <!--activeSystemicLupusErythematosus-->
-                <td><label class="control-label">Active Systemic Lupus Erythematosus</label></td>
-                <td><asp:RadioButtonList class="form-check-input" ID="inputActiveSystemicLupusErythematosus" runat="server">
-              <asp:ListItem Value="1">Yes</asp:ListItem>
-              <asp:ListItem Value="0" Selected="True">No</asp:ListItem>
+                <!--Medical comorbidities-->
+                <td><label class=" control-label">Medical Comorbidities</label></td>
+                <td><asp:RadioButtonList class="form-check-input" ID="inputMedicalComorbidities" runat="server">
+              <asp:ListItem Value="1">Yes (+3)</asp:ListItem>
+              <asp:ListItem Value="0" Selected="True">No (+0)</asp:ListItem>
           </asp:RadioButtonList></td>
             </tr>
-            <tr>
-                <!--inflammatoryPolyarthropathy-->
-                <td><label class="control-label">Inflammatory Polyarthropathy</label></td>
-                <td><asp:RadioButtonList class="form-check-input" ID="inputInflammatoryPolyarthropathy" runat="server">
-              <asp:ListItem Value="1">Yes</asp:ListItem>
-              <asp:ListItem Value="0" Selected="True">No</asp:ListItem>
-          </asp:RadioButtonList></td>
-                <!--inflammatoryBowelDisease-->
-                <td><label class="control-label">Inflammatory Bowel Disease</label></td>
-                <td><asp:RadioButtonList class="form-check-input" ID="inputInflammatoryBowelDisease" runat="server">
-              <asp:ListItem Value="1">Yes</asp:ListItem>
-              <asp:ListItem Value="0" Selected="True">No</asp:ListItem>
-          </asp:RadioButtonList></td>
-            </tr>
-            <tr>
-                <!--nephroticSyndrome-->
-                <td><label class="control-label">Nephrotic Syndrome</label></td>
-                <td><asp:RadioButtonList class="form-check-input" ID="inputNephroticSyndrome" runat="server">
-              <asp:ListItem Value="1">Yes</asp:ListItem>
-              <asp:ListItem Value="0" Selected="True">No</asp:ListItem>
-          </asp:RadioButtonList></td>
-                <!--typeIDiabetesMellitusWithNephropathy-->
-                <td><label class="control-label">Type I Diabetes Mellitus With Nephropathy</label></td>
-                <td><asp:RadioButtonList class="form-check-input" ID="inputTypeIDiabetesMellitusWithNephropathy" runat="server">
-              <asp:ListItem Value="1">Yes</asp:ListItem>
-              <asp:ListItem Value="0" Selected="True">No</asp:ListItem>
-          </asp:RadioButtonList></td>
-            </tr>
-            <tr>
-                <!--sickleCellDisease-->
-                <td><label class="control-label">Sickle Cell Disease</label></td>
-                <td><asp:RadioButtonList class="form-check-input" ID="inputSickleCellDisease" runat="server">
-              <asp:ListItem Value="1">Yes</asp:ListItem>
-              <asp:ListItem Value="0" Selected="True">No</asp:ListItem>
-          </asp:RadioButtonList></td>
-                <!--currentIntravenousDrugUser-->
-                <td><label class="control-label">Current Intravenous Drug User</label></td>
-                <td><asp:RadioButtonList class="form-check-input" ID="inputCurrentIntravenousDrugUser" runat="server">
-              <asp:ListItem Value="1">Yes</asp:ListItem>
-              <asp:ListItem Value="0" Selected="True">No</asp:ListItem>
-          </asp:RadioButtonList></td>
-            </tr>
+
             <tr>
                 <!--familyHistoryVTEFirstDegreeRelative-->
-                <td><label class="control-label">Family History of VTE , First Degree Relative</label></td>
+                <td><label class="control-label">Family history of unprovoked or estrogen-related VTE in first-degree relative </label></td>
                 <td><asp:RadioButtonList class="form-check-input" ID="inputFamilyHistoryVTEFirstDegreeRelative" runat="server">
-              <asp:ListItem Value="1">Yes</asp:ListItem>
-              <asp:ListItem Value="0" Selected="True">No</asp:ListItem>
+              <asp:ListItem Value="1">Yes (+1)</asp:ListItem>
+              <asp:ListItem Value="0" Selected="True">No (+0)</asp:ListItem>
           </asp:RadioButtonList></td>
                 <!--lowRiskThrombophilia-->
-                <td><label class="control-label">Low Risk Thrombophilia</label></td>
+                <td><label class="control-label">Known low-risk thrombophilia (no VTE)</label></td>
                 <td><asp:RadioButtonList class="form-check-input" ID="inputLowRiskThrombophilia" runat="server">
-              <asp:ListItem Value="1">Yes</asp:ListItem>
-              <asp:ListItem Value="0" Selected="True">No</asp:ListItem>
+              <asp:ListItem Value="1">Yes (+1)</asp:ListItem>
+              <asp:ListItem Value="0" Selected="True">No (+0)</asp:ListItem>
           </asp:RadioButtonList></td>
             </tr>
             <tr>
                 <!--smoker-->
                 <td><label class="control-label">Smoker</label></td>
                 <td><asp:RadioButtonList class="form-check-input" ID="inputSmoker" runat="server">
-              <asp:ListItem Value="1">Yes</asp:ListItem>
-              <asp:ListItem Value="0" Selected="True">No</asp:ListItem>
+              <asp:ListItem Value="1">Yes (+1)</asp:ListItem>
+              <asp:ListItem Value="0" Selected="True">No (+0)</asp:ListItem>
           </asp:RadioButtonList></td>
                 <!--grossVaricoseVeins-->
                 <td><label class="control-label">Gross Varicose Veins</label></td>
                 <td><asp:RadioButtonList class="form-check-input" ID="inputGrossVaricoseVeins" runat="server">
-              <asp:ListItem Value="1">Yes</asp:ListItem>
-              <asp:ListItem Value="0" Selected="True">No</asp:ListItem>
+              <asp:ListItem Value="1">Yes (+1)</asp:ListItem>
+              <asp:ListItem Value="0" Selected="True">No (+0)</asp:ListItem>
           </asp:RadioButtonList></td>
             </tr>
             
@@ -284,70 +229,70 @@
                 <!--preEclampsiaInCurrentPregnancy-->
                 <td><label class="control-label">Pre Eclampsia In Current Pregnancy</label></td>
                 <td><asp:RadioButtonList class="form-check-input" ID="inputPreEclampsiaInCurrentPregnancy" runat="server">
-              <asp:ListItem Value="1">Yes</asp:ListItem>
-              <asp:ListItem Value="0" Selected="True">No</asp:ListItem>
+              <asp:ListItem Value="1">Yes (+1)</asp:ListItem>
+              <asp:ListItem Value="0" Selected="True">No (+0)</asp:ListItem>
           </asp:RadioButtonList></td>
                 <!--ARTorIVF-->
-                <td><label class="control-label">ART or IVF</label></td>
+                <td><label class="control-label">ART or IVF (antenatal only)</label></td>
                 <td><asp:RadioButtonList class="form-check-input" ID="inputARTorIVF" runat="server">
-              <asp:ListItem Value="1">Yes</asp:ListItem>
-              <asp:ListItem Value="0" Selected="True">No</asp:ListItem>
+              <asp:ListItem Value="1">Yes (+1)</asp:ListItem>
+              <asp:ListItem Value="0" Selected="True">No (+0)</asp:ListItem>
           </asp:RadioButtonList></td>
             </tr>
               <tr>
                <!--multiplePregnancy-->
                 <td><label class="control-label">Multiple Pregnancy</label></td>
                 <td><asp:RadioButtonList class="form-check-input" ID="inputMultiplePregnancy" runat="server">
-              <asp:ListItem Value="1">Yes</asp:ListItem>
-              <asp:ListItem Value="0" Selected="True">No</asp:ListItem>
+              <asp:ListItem Value="1">Yes (+1)</asp:ListItem>
+              <asp:ListItem Value="0" Selected="True">No (+0)</asp:ListItem>
           </asp:RadioButtonList></td>
                   <!--caesareanSectionInLabour-->
                 <td><label class="control-label">Caesarean Section In Labour</label></td>
                 <td><asp:RadioButtonList class="form-check-input" ID="inputCaesareanSectionInLabour" runat="server">
-              <asp:ListItem Value="1">Yes</asp:ListItem>
-              <asp:ListItem Value="0" Selected="True">No</asp:ListItem>
+              <asp:ListItem Value="1">Yes (+2)</asp:ListItem>
+              <asp:ListItem Value="0" Selected="True">No (+0)</asp:ListItem>
           </asp:RadioButtonList></td>
             </tr>
             <tr>
                 <!--electiveCaesareanSection-->
-                <td><label class="control-label">Elective Caesarean Section</label></td>
+                <td><label class="control-label">Elective caesarean section</label></td>
                 <td><asp:RadioButtonList class="form-check-input" ID="inputElectiveCaesareanSection" runat="server">
-              <asp:ListItem Value="1">Yes</asp:ListItem>
-              <asp:ListItem Value="0" Selected="True">No</asp:ListItem>
+              <asp:ListItem Value="1">Yes (+1)</asp:ListItem>
+              <asp:ListItem Value="0" Selected="True">No (+0)</asp:ListItem>
           </asp:RadioButtonList></td>
                 <!--operativeDelivery-->
-                <td> <label class="control-label">Operative Delivery</label></td>
+                <td> <label class="control-label">Mid-cavity or rotational operative delivery</label></td>
                 <td><asp:RadioButtonList class="form-check-input" ID="inputOperativeDelivery" runat="server">
-              <asp:ListItem Value="1">Yes</asp:ListItem>
-              <asp:ListItem Value="0" Selected="True">No</asp:ListItem>
+              <asp:ListItem Value="1">Yes (+1)</asp:ListItem>
+              <asp:ListItem Value="0" Selected="True">No (+0)</asp:ListItem>
           </asp:RadioButtonList></td>
             </tr>
             <tr>
                 <!--prolongedLabour-->
-                <td><label class="control-label">Prolonged Labour</label></td>
+                <td><label class="control-label">Prolonged labour (> 24 hours)</label></td>
                 <td><asp:RadioButtonList class="form-check-input" ID="inputProlongedLabour" runat="server">
-              <asp:ListItem Value="1">Yes</asp:ListItem>
-              <asp:ListItem Value="0" Selected="True">No</asp:ListItem>
+              <asp:ListItem Value="1">Yes (+1)</asp:ListItem>
+              <asp:ListItem Value="0" Selected="True">No (+0)</asp:ListItem>
           </asp:RadioButtonList></td>
                 <!--PPH-->
-                <td><label class="control-label">PPH</label></td>
+                <td><label class="control-label">PPH (> 1 litre or transfusion)</label></td>
                 <td><asp:RadioButtonList class="form-check-input" ID="inputPPH" runat="server">
-              <asp:ListItem Value="1">Yes</asp:ListItem>
-              <asp:ListItem Value="0" Selected="True">No</asp:ListItem>
+              <asp:ListItem Value="1">Yes (+1)</asp:ListItem>
+              <asp:ListItem Value="0" Selected="True">No (+0)</asp:ListItem>
           </asp:RadioButtonList></td>
             </tr>
             <tr>
                 <!--pretermBirth-->
-                <td><label class="control-label">Preterm Birth</label></td>
+                <td><label class="control-label">Preterm birth < 37+0 weeks in current pregnancy</label></td>
                 <td><asp:RadioButtonList class="form-check-input" ID="inputPretermBirth" runat="server">
-              <asp:ListItem Value="1">Yes</asp:ListItem>
-              <asp:ListItem Value="0" Selected="True">No</asp:ListItem>
+              <asp:ListItem Value="1">Yes (+1)</asp:ListItem>
+              <asp:ListItem Value="0" Selected="True">No (+0)</asp:ListItem>
           </asp:RadioButtonList></td>
                 <!--stillBirth-->
-                <td><label class="control-label">Still Birth</label></td>
+                <td><label class="control-label">Stillbirth in current pregnancy</label></td>
                 <td><asp:RadioButtonList class="form-check-input" ID="inputStillBirth" runat="server">
-              <asp:ListItem Value="1">Yes</asp:ListItem>
-              <asp:ListItem Value="0" Selected="True">No</asp:ListItem>
+              <asp:ListItem Value="1">Yes (+1)</asp:ListItem>
+              <asp:ListItem Value="0" Selected="True">No (+0)</asp:ListItem>
           </asp:RadioButtonList></td>
             </tr>
             
@@ -374,38 +319,39 @@
           <tbody>
             <tr>
                 <!--surgicalProcedure-->
-                <td><label class="control-label">Surgical Procedure</label></td>
+                <td><label class="control-label">Any surgical procedure in pregnancy or puerperium except immediate repair of the
+perineum, e.g. appendicectomy, postpartum sterilisation</label></td>
                 <td><asp:RadioButtonList class="form-check-input" ID="inputSurgicalProcedure" runat="server">
-              <asp:ListItem Value="1">Yes</asp:ListItem>
-              <asp:ListItem Value="0" Selected="True">No</asp:ListItem>
+              <asp:ListItem Value="1">Yes (+3)</asp:ListItem>
+              <asp:ListItem Value="0" Selected="True">No (+0)</asp:ListItem>
           </asp:RadioButtonList></td>
                  <!--Hyperemesis-->
                 <td><label class="control-label">Hyperemesis</label></td>
                 <td><asp:RadioButtonList class="form-check-input" ID="inputHyperemesis" runat="server">
-              <asp:ListItem Value="1">Yes</asp:ListItem>
-              <asp:ListItem Value="0" Selected="True">No</asp:ListItem>
+              <asp:ListItem Value="1">Yes (+3)</asp:ListItem>
+              <asp:ListItem Value="0" Selected="True">No (+0)</asp:ListItem>
           </asp:RadioButtonList></td>
             </tr>
               <tr>
                   <!--OHSS-->
-                <td><label class="control-label">OHSS</label></td>
+                <td><label class="control-label">OHSS (first trimester only)</label></td>
                 <td><asp:RadioButtonList class="form-check-input" ID="inputOHSS" runat="server">
-              <asp:ListItem Value="1">Yes</asp:ListItem>
-              <asp:ListItem Value="0" Selected="True">No</asp:ListItem>
+              <asp:ListItem Value="1">Yes (+4)</asp:ListItem>
+              <asp:ListItem Value="0" Selected="True">No (+0)</asp:ListItem>
           </asp:RadioButtonList></td>
                   <!--currentSystemicInfection-->
                 <td><label class="control-label">Current Systemic Infection</label></td>
                 <td><asp:RadioButtonList class="form-check-input" ID="inputCurrentSystemicInfection" runat="server">
-              <asp:ListItem Value="1">Yes</asp:ListItem>
-              <asp:ListItem Value="0" Selected="True">No</asp:ListItem>
+              <asp:ListItem Value="1">Yes (+1)</asp:ListItem>
+              <asp:ListItem Value="0" Selected="True">No (+0)</asp:ListItem>
           </asp:RadioButtonList></td>
             </tr>
               <tr>
                   <!--immobilityOrDehydration-->
                 <td><label class="control-label">Immobility Or Dehydration</label></td>
                 <td><asp:RadioButtonList class="form-check-input" ID="inputImmobilityOrDehydration" runat="server">
-              <asp:ListItem Value="1">Yes</asp:ListItem>
-              <asp:ListItem Value="0" Selected="True">No</asp:ListItem>
+              <asp:ListItem Value="1">Yes (+1)</asp:ListItem>
+              <asp:ListItem Value="0" Selected="True">No (+0)</asp:ListItem>
           </asp:RadioButtonList></td>
             </tr>
             

@@ -396,6 +396,14 @@
     <Compile Include="Migrations\201904221308476_update.Designer.cs">
       <DependentUpon>201904221308476_update.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201904280008279_AddedLastEditedDateAndIdToPatientClass.cs" />
+    <Compile Include="Migrations\201904280008279_AddedLastEditedDateAndIdToPatientClass.Designer.cs">
+      <DependentUpon>201904280008279_AddedLastEditedDateAndIdToPatientClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904280110454_AddedNoOfPregnanciesToPatientClass.cs" />
+    <Compile Include="Migrations\201904280110454_AddedNoOfPregnanciesToPatientClass.Designer.cs">
+      <DependentUpon>201904280110454_AddedNoOfPregnanciesToPatientClass.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Ajax Models\Doctor.cs" />
     <Compile Include="Models\Ajax Models\PatientDoctorAjaxModel.cs" />
@@ -469,6 +477,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201904221308476_update.resx">
       <DependentUpon>201904221308476_update.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904280008279_AddedLastEditedDateAndIdToPatientClass.resx">
+      <DependentUpon>201904280008279_AddedLastEditedDateAndIdToPatientClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904280110454_AddedNoOfPregnanciesToPatientClass.resx">
+      <DependentUpon>201904280110454_AddedNoOfPregnanciesToPatientClass.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
