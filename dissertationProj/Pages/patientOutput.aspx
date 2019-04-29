@@ -41,7 +41,7 @@
           
   <div class="panel-body" style="overflow:auto;">
 
-      <table style="width:100%;"  id="patientInputTable" border="0">
+      <table style="width:100%;"  id="patientOutputTable" border="0">
           <tbody>
               <tr>
                   <%-- First Name--%>
@@ -132,7 +132,7 @@
       --------------------------------------%>
   <div class="panel-body">
 
-      <table style="width:100%;"  id="patientoutputTableOne">
+      <table style="width:100%;"  id="patientOutputTableOne">
         <tbody>
 
                        
@@ -210,7 +210,7 @@
       --------------------------------------%>
   <div class="panel-body">
 
-      <table style="width:100%;" id="patientoutputTableTwo">
+      <table style="width:100%;" id="patientOutputTableTwo">
           <tbody>
             <tr>
                 <!--preEclampsiaInCurrentPregnancy-->
@@ -302,7 +302,7 @@
       --------------------------------------%>
   <div class="panel-body">
 
-      <table style="width:100%;" id="patientoutputTableThree">
+      <table style="width:100%;" id="patientOutputTableThree">
           <tbody>
             <tr>
                 <!--surgicalProcedure-->

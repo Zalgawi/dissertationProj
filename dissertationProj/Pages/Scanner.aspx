@@ -21,18 +21,34 @@ function gtag() {
 }
 gtag('js', new Date());
     gtag('config', 'UA-33848682-1');
-        
+
 </script>
+    <style>
+        .jumbotron p {
+    margin-bottom: 15px;
+    font-size: 15px;
+    font-weight: 200;
+}
+        .auto-style1 {
+            color: inherit;
+            height: 779px;
+            margin-top: 20px;
+            margin-bottom: 30px;
+            padding-top: 48px;
+            padding-bottom: 48px;
+            background-color: #ecf0f1;
+        }
+    </style>
 
 
     
-    <div class="jumbotron">
+    <div class="auto-style1">
+        <br />
         <h1 class="text-center">Lookup a Patient</h1>
-        <hr />
         <p class="lead" style="text-align: center">Enter the patient ID to display the appropriate data.</p>
         <p class="lead" style="text-align: center"><input class="form-control form-control-lg" style="display:block; margin: 0 auto;" type="text" placeholder="Input patient's ID" id="patientIdInput"></p>
         <p class="lead" style="text-align: center">
-            <asp:Button ID="patientLookup" href="/Pages/patientOutput" runat="server" class="btn btn-success" Text="Look Up" /></p>
+            <asp:Button ID="patientLookup" href="/Pages/patientOutput" runat="server" clickBtn="" class="btn btn-success" Text="Look Up" /></p>
             <hr />
             
 

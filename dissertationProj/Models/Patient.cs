@@ -109,8 +109,8 @@ namespace dissertationProj.Models
         {
             if(height != 0)
             {
-                //BMI uses meters whereas my height intake is in cm, therefore I must convert cm into m by dividing it by 100.
-                //
+                /*BMI uses meters whereas my height intake is in cm, therefore I must
+                convert cm into m by dividing it by 100.*/
                 var bmiHeight = (this.height / 100) * (this.height / 100);
                 var bmiWeight = this.weight;
 

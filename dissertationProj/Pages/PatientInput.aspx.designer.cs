@@ -49,6 +49,24 @@ namespace dissertationProj.Pages {
         protected global::System.Web.UI.WebControls.DropDownList inputGender;
         
         /// <summary>
+        /// inputWeight control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox inputWeight;
+        
+        /// <summary>
+        /// inputHeight control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox inputHeight;
+        
+        /// <summary>
         /// inputCivilStatus control.
         /// </summary>
         /// <remarks>
@@ -56,6 +74,15 @@ namespace dissertationProj.Pages {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList inputCivilStatus;
+        
+        /// <summary>
+        /// inputParity control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox inputParity;
         
         /// <summary>
         /// drpCalMonth control.
@@ -85,24 +112,6 @@ namespace dissertationProj.Pages {
         protected global::System.Web.UI.WebControls.Calendar inputBirthDate;
         
         /// <summary>
-        /// inputWeight control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox inputWeight;
-        
-        /// <summary>
-        /// inputHeight control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox inputHeight;
-        
-        /// <summary>
         /// drpCalMonth2 control.
         /// </summary>
         /// <remarks>
@@ -128,15 +137,6 @@ namespace dissertationProj.Pages {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Calendar inputDateOfAdmission;
-        
-        /// <summary>
-        /// inputParity control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox inputParity;
         
         /// <summary>
         /// inputPreviousVTE control.

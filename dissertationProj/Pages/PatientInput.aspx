@@ -19,114 +19,109 @@
 
       <div class="panel panel-success">
 
+<style>
+    td {
+        padding: 5px;
+        text-align: left;
+        
+    }
+    
+    .radioButtonList { list-style:none; margin: 0; padding: 0;}
+    .radioButtonList.horizontal li { display: inline;}
 
+    .radioButtonList label{
+        display:inline;
+    }
+</style>
           
       <%--------------------------------------
           Inserting General Patient Data
       --------------------------------------%>
 
 
-  <div class="panel-body">
-  <div class="form-group">
-      
-     <%-- First Name--%>
-      <label for="inputFirstName" class="col-lg-2 control-label">First Name</label>
-      <div class="col-lg-10">
-          <asp:TextBox  class="form-control" ID="inputFirstName" runat="server" placeholder="First Name"></asp:TextBox>
-          <br />
-      </div>
-    <%--Middle Name--%>
-     <label for="inputMiddleName" class="col-lg-2 control-label">Middle Name</label>
-      <div class="col-lg-10">
-          <asp:TextBox  class="form-control" ID="inputMiddleName" runat="server" placeholder="Middle Name"></asp:TextBox>
-          <br />
-      </div>
-    <%--Last Name--%>
-     <label for="inputLastName" class="col-lg-2 control-label">Last Name</label>
-      <div class="col-lg-10">
-          <asp:TextBox  class="form-control" ID="inputLastName" runat="server" placeholder="Last Name"></asp:TextBox>
-          <br />
-      </div>
-        <%--Gender--%>
-     <label for="inputGender" class="col-lg-2 control-label">Select Gender</label>
-     
-          <asp:DropDownList class="form-control" ID="inputGender" runat="server">
-              <asp:ListItem Text="Select Gender" Selected="True" Value="0">Select Gender</asp:ListItem>
-              <asp:ListItem Text="Male" Value="1">Male</asp:ListItem>
-              <asp:ListItem Text="Female" Value="2">Female</asp:ListItem>
-              <asp:ListItem Text="Other" Value="3">Other</asp:ListItem>
-          </asp:DropDownList>
-          <br />
-      </div>
-      <%--Civil Status--%>       
-      <label class="control-label">Select Civil Status</label>
-
-            <asp:DropDownList class="form-control" ID="inputCivilStatus" runat="server">
-              <asp:ListItem Text="Select Civil Status" Selected="True" Value="0">Select Civil Status</asp:ListItem>
-              <asp:ListItem Text="Single" Value="Single">Single</asp:ListItem>
-              <asp:ListItem Text="Married" Value="Married">Married</asp:ListItem>
-              <asp:ListItem Text="Seperated" Value="Seperated">Seperated</asp:ListItem>
-              <asp:ListItem Text="Divorced" Value="Divorced">Divorced</asp:ListItem>
-          </asp:DropDownList>
-           <br />
-            
-        <%--Birthdate--%>
-        <label for="inputBirthDate" class="col-lg-2 control-label">Birthdate</label>
-      
+  <div class="panel-body" style="overflow:auto;">
+      <table style="width:100%;"  id="patientInputTable" border="0">
+      <tbody>
+              <tr>
+                  <%-- First Name--%>
+                  <td ><label class="control-label">First Name</label></td>
+                  <td><asp:TextBox class="form-control" ID="inputFirstName" runat="server" placeholder="First Name"></asp:TextBox></td>
+                  <%--Middle Name--%>
+                  <td><label class="control-label">Middle Name</label></td>
+                   <td><asp:TextBox class="form-control" ID="inputMiddleName" runat="server" placeholder="Middle Name"></asp:TextBox></td>
+                  </tr>
+              <tr>
+                  <%--Last Name--%>
+                  <td><label class="control-label">Last Name</label></td>
+                  <td><asp:TextBox class="form-control" ID="inputLastName" runat="server" placeholder="Last Name"></asp:TextBox></td>
+                  <%--Gender--%>
+                  <td><label class="control-label">Select Gender</label></td>
+                 <td><asp:DropDownList class="form-control" ID="inputGender" runat="server">
+                      <asp:ListItem Text="Select Gender" Selected="True" Value="0">Select Gender</asp:ListItem>
+                      <asp:ListItem Text="Male" Value="1">Male</asp:ListItem>
+                      <asp:ListItem Text="Female" Value="2">Female</asp:ListItem>
+                      <asp:ListItem Text="Other" Value="3">Other</asp:ListItem>
+                  </asp:DropDownList></td>
+                  </tr>
+          <tr>
+              <%--Weight--%>
+                <td><label class="control-label">Weight (Kg)</label></td>
+                <td><asp:TextBox class="form-control" ID="inputWeight" runat="server" placeholder="Weight (Kilograms)"></asp:TextBox></td>
+              <%--Height--%>
+              <td><label class="control-label">Height (Cm)</label></td>
+              <td><asp:TextBox class="form-control" ID="inputHeight" runat="server" placeholder="Height (Centimeters)"></asp:TextBox></td>
+          </tr>
+            <tr>
+                  <%--Civil Status--%>
+                  <td><label class="control-label">Select Civil Status</label></td>
+                  <td><asp:DropDownList class="form-control" ID="inputCivilStatus" runat="server">
+                      <asp:ListItem Text="Select Civil Status" Selected="True" Value="0">Select Civil Status</asp:ListItem>
+                      <asp:ListItem Text="Single" Value="Single">Single</asp:ListItem>
+                      <asp:ListItem Text="Married" Value="Married">Married</asp:ListItem>
+                      <asp:ListItem Text="Seperated" Value="Seperated">Seperated</asp:ListItem>
+                      <asp:ListItem Text="Divorced" Value="Divorced">Divorced</asp:ListItem>
+                  </asp:DropDownList></td>
+                 <!--Parity-->
+                <td><label class="control-label">Amount of pregnancies had (Parity)</label></td>
+                <td class="text-center" ><asp:TextBox  style="text-align: center;" class="form-control" ID="inputParity" runat="server" placeholder="Parity" Width="75px"></asp:TextBox></td>
+                </tr>
+          <tr>
+               <%--Birthdate--%>
+              <td><label class="control-label">Birthdate</label></td>
+              <td><asp:DropDownList ID="drpCalMonth" runat="Server" OnSelectedIndexChanged="Set_Calendar" AutoPostBack="true"></asp:DropDownList>
+                  <asp:DropDownList ID="drpCalYear" runat="Server" OnSelectedIndexChanged="Set_Calendar" AutoPostBack="true"></asp:DropDownList>
+                      <asp:Calendar ID="inputBirthDate" runat="Server" Width="283px" Height="247px" BackColor="White" BorderColor="#999999" CellPadding="4" DayNameFormat="Shortest" Font-Names="Verdana" Font-Size="8pt" ForeColor="Black">
+                          <DayHeaderStyle BackColor="#CCCCCC" Font-Bold="True" Font-Size="7pt" />
+                          <NextPrevStyle VerticalAlign="Bottom" />
+                          <OtherMonthDayStyle ForeColor="#808080" />
+                          <SelectedDayStyle BackColor="#666666" Font-Bold="True" ForeColor="White" />
+                          <SelectorStyle BackColor="#CCCCCC" />
+                          <TitleStyle BackColor="#999999" BorderColor="Black" Font-Bold="True" />
+                          <TodayDayStyle BackColor="#CCCCCC" ForeColor="Black" />
+                          <WeekendDayStyle BackColor="#FFFFCC" />
+                      </asp:Calendar> </td>
+              <%--Date Of Admission--%>
+              <td><label class="control-label">Date of Admission</label></td>
+              <td><asp:DropDownList ID="drpCalMonth2" runat="Server" OnSelectedIndexChanged="Set_Calendar2" AutoPostBack="true"></asp:DropDownList>
+                  <asp:DropDownList ID="drpCalYear2" runat="Server" OnSelectedIndexChanged="Set_Calendar2" AutoPostBack="true"></asp:DropDownList>
+<asp:Calendar ID="inputDateOfAdmission" runat="Server" Width="283px" Height="247px" BackColor="White" BorderColor="#999999" CellPadding="4" DayNameFormat="Shortest" Font-Names="Verdana" Font-Size="8pt" ForeColor="Black">
+                          <DayHeaderStyle BackColor="#CCCCCC" Font-Bold="True" Font-Size="7pt" />
+                          <NextPrevStyle VerticalAlign="Bottom" />
+                          <OtherMonthDayStyle ForeColor="#808080" />
+                          <SelectedDayStyle BackColor="#666666" Font-Bold="True" ForeColor="White" />
+                          <SelectorStyle BackColor="#CCCCCC" />
+                          <TitleStyle BackColor="#999999" BorderColor="Black" Font-Bold="True" />
+                          <TodayDayStyle BackColor="#CCCCCC" ForeColor="Black" />
+                          <WeekendDayStyle BackColor="#FFFFCC" />
+                      </asp:Calendar> </td>
+          </tbody>
+          </table>
+                 
     
-        &nbsp&nbsp&nbsp&nbsp
-            <asp:DropDownList id="drpCalMonth" Runat="Server" OnSelectedIndexChanged="Set_Calendar" AutoPostBack="true"></asp:DropDownList>
-            <asp:DropDownList id="drpCalYear" Runat="Server" OnSelectedIndexChanged="Set_Calendar" AutoPostBack="true"></asp:DropDownList>
-                 
-      <div class="col-lg-10">
-         <asp:Calendar id="inputBirthDate" Runat="Server" Width="283px" Height="247px" BackColor="White" BorderColor="#999999" CellPadding="4" DayNameFormat="Shortest" Font-Names="Verdana" Font-Size="8pt" ForeColor="Black" >
-             <DayHeaderStyle BackColor="#CCCCCC" Font-Bold="True" Font-Size="7pt" />
-             <NextPrevStyle VerticalAlign="Bottom" />
-             <OtherMonthDayStyle ForeColor="#808080" />
-             <SelectedDayStyle BackColor="#666666" Font-Bold="True" ForeColor="White" />
-             <SelectorStyle BackColor="#CCCCCC" />
-             <TitleStyle BackColor="#999999" BorderColor="Black" Font-Bold="True" />
-             <TodayDayStyle BackColor="#CCCCCC" ForeColor="Black" />
-             <WeekendDayStyle BackColor="#FFFFCC" />
-          </asp:Calendar>
-          <br />
-      </div>
-         <%--Weight--%>
-     <label for="inputWeight" class="col-lg-2 control-label">Weight (Kg)</label>
-      <div class="col-lg-10">
-          <asp:TextBox  class="form-control" ID="inputWeight" runat="server" placeholder="Weight (Kilograms)"></asp:TextBox>
-          <br />
-      </div>
-         <%--Height--%>
-     <label for="inputHeight" class="col-lg-2 control-label">Height (Cm)</label>
-      <div class="col-lg-10">
-          <asp:TextBox  class="form-control" ID="inputHeight" runat="server" placeholder="Height (Centimeters)"></asp:TextBox>
-          <br />
-      </div>    
-      <%--Date Of Admission--%>
-     <label for="inputDateOfAdmission" class="col-lg-2 control-label">Date of Admission</label>
 
-     <br />
-&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<asp:DropDownList id="drpCalMonth2" Runat="Server" OnSelectedIndexChanged="Set_Calendar2" AutoPostBack="true"></asp:DropDownList>
-            <asp:DropDownList id="drpCalYear2" Runat="Server" OnSelectedIndexChanged="Set_Calendar2" AutoPostBack="true"></asp:DropDownList>
-                 
-      <div class="col-lg-10">
-         <asp:Calendar id="inputDateOfAdmission" Runat="Server" Width="283px" Height="247px" BackColor="White" BorderColor="#999999" CellPadding="4" DayNameFormat="Shortest" Font-Names="Verdana" Font-Size="8pt" ForeColor="Black" >
-             <DayHeaderStyle BackColor="#CCCCCC" Font-Bold="True" Font-Size="7pt" />
-             <NextPrevStyle VerticalAlign="Bottom" />
-             <OtherMonthDayStyle ForeColor="#808080" />
-             <SelectedDayStyle BackColor="#666666" Font-Bold="True" ForeColor="White" />
-             <SelectorStyle BackColor="#CCCCCC" />
-             <TitleStyle BackColor="#999999" BorderColor="Black" Font-Bold="True" />
-             <TodayDayStyle BackColor="#CCCCCC" ForeColor="Black" />
-             <WeekendDayStyle BackColor="#FFFFCC" />
-          </asp:Calendar>
-          <br />
-      </div>
-        
-    </div>    
   </div>
-   
+      </div>
+
 
   </div>
     <%----------------------------------------------------------------------------------------------------%>
@@ -141,12 +136,7 @@
       <table style="width:100%; "  id="patientInputTableOne">
         <tbody>
 
-            <tr>
-                <!--Parity-->
-                <td><label class="control-label">Parity</label></td>
-                <td><asp:TextBox  class="form-control" ID="inputParity" runat="server" placeholder="Parity"></asp:TextBox></td>
-                               
-            </tr>
+               
 
             
             <tr>
