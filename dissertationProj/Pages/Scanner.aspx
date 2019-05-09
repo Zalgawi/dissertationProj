@@ -119,7 +119,12 @@ gtag('js', new Date());
 
 
             videoSelect.onchange = getStream;
-
+            //////////////////////////////////////////////////////////////////////////////////////////////
+            
+            //document.getElementById('submit').onclick = function() {
+            //    location.href = '<a href="/Pages/PatientOutput?id=' + row.patient.patientId.toString() + '">' + row.patient.patientId + '</a>' + document.getElementById('patientIdInput').value;
+            //    };
+           //////////////////////////////////////////////////////////////////////////////////////////////////     
 
             $('#patientsTable').DataTable({
                 
